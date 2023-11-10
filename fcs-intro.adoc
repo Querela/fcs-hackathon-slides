@@ -1,0 +1,14 @@
+= Einführung in die Föderierte Inhaltssuche (FCS)
+
+== Was ist die FCS?
+
+* "Federated Content Search" von CLARIN
++
+übersetzt: Inhaltssuche über verteilte Ressourcen
++
+auch: Föderierte "Corpus Query Platform"
+* _Suche nach Mustern in verteilten Text-Sammlungen_
+* kein zentraler Index!
+* Text-Ressourcen umfassen annotierte Korpora, Volltexte usw.
+* FCS = Interface-Spezifikation, Such-Infrastruktur und Software-Ökosystem
+* Nutzung von etablierten Standards und Erweiterbarkeit!

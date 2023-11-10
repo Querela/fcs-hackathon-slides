@@ -1,25 +1,6 @@
-= Title Slide
+= Text+ Resource and Search Integration Hackathon
 :revealjsdir: reveal.js
 :revealjs_theme: sky
 :source-highlighter: highlight.js
 
-== Slide One
-
-* Foo
-* Bar
-* World
-
-[.columns]
-== 2 columns
-
-[.column]
---
-* **Edgar Allen Poe**
-* Sheri S. Tepper
-* Bill Bryson
---
-
-[.column]
---
-Edgar Allan Poe (/poʊ/; born Edgar Poe; January 19, 1809 – October 7, 1849) was an American writer, editor, and literary critic.
---
+include::fcs-intro.adoc[leveloffset=+1]
