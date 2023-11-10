@@ -218,3 +218,18 @@ image::fcsql-query-builder.png[Visual Query Builder for FCS-QL]
 
 image::fcsql-adv-results.png[ADV Results]
 
+== Aktueller Stand der FCS
+
+* Aktuelle Version der Spezifikation: *FCS Core 2.0*
+* Poster auf https://www.clarin.eu/sites/default/files/CLARIN2023_Bazaar_29.pdf[Bazaar @ CLARIN2023] zum aktuellen Stand
+* 😎 “Awesome FCS” List: https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs] 
+mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
+** Text+ Ergänzungen (z.B. zu LexFCS/LexCQL/Forks/Software): https://gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md?ref_type=heads[gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md]
+* CLARIN Spezifikationen: https://github.com/clarin-eric/fcs-misc[github.com/clarin-eric/fcs-misc] 
+* Kleines Ökosystem (Code auf https://github.com/clarin-eric?q=fcs[Github]/Gitlab)
+** Software-Libraries (SRU/FCS, Endpunkt + Client, Java/Python)
+** Aggregator (Code: Github, Text+ Fork)
+** Online-Validator für Endpunkte (http://clarin.ids-mannheim.de/srutest[srutest], Code: https://github.com/clarin-eric/fcs-endpoint-tester[Github])
+* Endpunkte-Registratur: https://centres.clarin.eu/fcs[centres.clarin.eu/fcs]
+
+
