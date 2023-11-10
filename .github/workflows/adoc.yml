@@ -32,6 +32,10 @@ jobs:
           name: docs
           path: docs/*
 
+      - name: Setup reveal.js
+        run: |
+          git clone -b 4.1.2 --depth 1 https://github.com/hakimel/reveal.js.git
+
       - name: Build Slides
         run: asciidoctor-revealjs -v -D slides index.adoc
 
