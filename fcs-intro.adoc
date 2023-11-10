@@ -10,9 +10,6 @@ auch: Föderierte "Corpus Query Platform"
 * _Suche nach Mustern in verteilten Text-Sammlungen_
 * kein zentraler Index!
 * Text-Ressourcen umfassen annotierte Korpora, Volltexte usw.
-
-== Was ist die FCS? (2)
-
 * FCS = Interface-Spezifikation, Such-Infrastruktur und Software-Ökosystem
 * Nutzung von etablierten Standards und Erweiterbarkeit!
 
@@ -24,14 +21,10 @@ auch: Föderierte "Corpus Query Platform"
 "für homogenen Zugriff auf heterogene Suchmaschinen"
 * RESTful Protokoll
 
-== Was umfasst die FCS? (2)
-
 *Such-Infrastruktur in CLARIN und Text+*
 
 * zentraler Client (Daten “Aggregator” und Webportal)
 * dezentrale Endpunkte an den Datenzentren (lokale Suchmaschinen auf Ressourcen)
-
-== Was umfasst die FCS? (3)
 
 *Software-Ökosystem primär in Java*
 
