@@ -35,11 +35,11 @@ jobs:
       - name: Setup reveal.js
         run: |
           git clone -b 4.1.2 --depth 1 https://github.com/hakimel/reveal.js.git
+          mkdir slides/reveal.js
+          mv reveal.js/dist slides/reveal.js/
 
       - name: Build Slides
-        run: |
-          asciidoctor-revealjs -v -D slides index.adoc
-          mv reveal.js slides/
+        run: asciidoctor-revealjs -v -D slides index.adoc
 
       - name: Store results (slides)
         uses: actions/upload-artifact@v3
