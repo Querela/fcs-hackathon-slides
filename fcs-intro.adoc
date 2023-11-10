@@ -143,4 +143,57 @@ auch: Föderierte “Corpus Query Platform”
 [%notitle,background-image="LexFCS_Diagram_v3.png",background-size="contain"]
 == FCS Architektur
 
+== Kommunikationsprotokoll
+
+SRU (Search/Retrieval via URL) / OASIS searchRetrieve
+* Standardisiert durch Library of Congress (LoC) / OASIS
+** RESTful
+** *Explain*: Vorhandene Ressourcen
+*** Sprache, Annotationen, unterstützte Datenformate etc.
+** *SearchRetrieve*: Suchanfrage
+* Daten als XML
+* Erlaubt Erweiterungen des Protokolls
+
+== Grundannahme zur Datenstruktur
+
+* verschiedene (optionale) Annotationsebenen (Layer)
+
+[%noheader,cols="h,4*"]
+|===
+|Volltext
+|Die
+|Autos
+|sind
+|schnell
+
+|Wortart
+|DET
+|NOUN
+|VERB
+|ADJ
+
+|Grundform
+|Das
+|Auto
+|ist
+|schnell
+
+|Phonetische Transkription
+|...
+|...
+|...
+|...
+
+|Orthographische Transkription
+|...
+|...
+|...
+|...
+
+|[...]
+| 
+| 
+| 
+| 
+|===
 
