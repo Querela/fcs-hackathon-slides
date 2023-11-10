@@ -8,8 +8,9 @@
 :source-highlighter: highlight.js
 :imagesdir: images
 :customcss: css/presentation.css
+:toclevels: 1
 
-[%notitle]
+[%notitle,discrete]
 ifdef::backend-revealjs[== Table of Contents]
 
 toc::[]
