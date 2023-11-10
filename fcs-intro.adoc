@@ -114,17 +114,34 @@ auch: Föderierte “Corpus Query Platform”
 
 * *~ 2011* als Working Group in CLARIN gestartet
 * *Mai 2011* https://trac.clarin.eu/wiki/Clarin%20Federated%20Search%20Demonstrator[EDC/FCS Workshop]
-* *~ 2011–2013* Initiale Version, nun als FCS “Legacy” benannt
+* *~ 2011–2013* Initiale Version, nun als *FCS “Legacy”* benannt
 ** SRU Scan für Ressourcen, BASIC Search (CQL/Volltext), KWIC
 * *April 2013* https://www.clarin.eu/event/2013/federated-content-search-workshop[FCS Workshop]
-* *~ 2013/2014* Code und Spec für FCS Core 1.0
+* *~ 2013/2014* Code und Spec für *FCS Core 1.0*
 ** fcs-simple-endpoint 1.0.0, sru-server 1.5.0
 ** BASIC Hits Data View, keine scan Operation mehr
 
+[.notes]
+--
+* vieles in den _Annalen der Geschichte_ verschwunden …
+* https://github.com/clarin-eric/fcs-misc/tree/main/historical/documents 
+* https://trac.clarin.eu/wiki/FederatedSearch?version=1 
+* https://trac.clarin.eu/browser/FCSSimpleEndpoint/tags
+* https://trac.clarin.eu/wiki/FCS/Specification?action=history
+* https://trac.clarin.eu/wiki/Taskforces/FCS/FCS-Specification-Draft?action=history
+* https://www.clarin.eu/event/2013/federated-content-search-workshop 
+* EDC: European Demonstrator Case
+--
+
 == Geschichte (2)
 
-* *~ 2015/2016* Spec und Code für FCS Core 2.0
+* *~ 2015/2016* Spec und Code für *FCS Core 2.0*
 ** fcs-simple-endpoint 1.3.0, sru-server 1.8.0
 ** Advanced Data Views (FCS-QL), …
-* *2022* FCS Schwerpunkt in Text+ (Findability)
+* *2022* FCS Schwerpunkt in Text+ (_Findability_)
 * *2023* neuer FCS-Maintainer in CLARIN
+
+[%notitle,background-image="images/LexFCS_Diagram_v3.png",background-size="contain"]
+== FCS Architektur
+
+
