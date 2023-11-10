@@ -2,7 +2,9 @@
 :author: Erik Körner <koerner@saw-leipzig.de>
 :date: 2023-11-16
 :revealjsdir: reveal.js
-:revealjs_theme: sky
+:revealjs_theme: white
+:revealjs_width: 1408
+:revealjs_height: 792
 :source-highlighter: highlight.js
 :customcss: css/presentation.css
 
