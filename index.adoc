@@ -10,8 +10,8 @@
 :customcss: css/presentation.css
 :toclevels: 1
 
-[%notitle,discrete]
-ifdef::backend-revealjs[== Table of Contents]
+[%notitle]
+ifdef::backend-revealjs[[discrete]== Table of Contents]
 
 toc::[]
 
