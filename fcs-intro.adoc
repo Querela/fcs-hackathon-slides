@@ -86,7 +86,7 @@ auch: Föderierte “Corpus Query Platform”
 
 == Vergleich FCS mit zentralem Index
 
-[cols="h,2,2"]
+[%noheader,cols="h,3,3"]
 |===
 |Daten
 |➕ bei Endpunkten
@@ -95,7 +95,12 @@ auch: Föderierte “Corpus Query Platform”
 |Daten-Updates
 |➕ Endpunkte können schnell reagieren
 |➖ schwierig, z.B. Entfernen von Ressourcen bei rechtlichen Problemen; Updates mit längeren Zeiten verbunden, falls überhaupt möglich
+|===
 
+== Vergleich FCS mit zentralem Index (2)
+
+[%noheader,cols="h,3,3"]
+|===
 |globales Ranking
 |➖ sehr schwierig/unmöglich
 |➕ gut möglich (?), vermutlich implizite Annahme zu und Normalisierung von Daten für Indizierung
