@@ -2,11 +2,11 @@
 
 == Was ist die FCS?
 
-* "Federated Content Search" von https://www.clarin.eu/content/content-search[CLARIN]
+* “Federated Content Search” von https://www.clarin.eu/content/content-search[CLARIN]
 +
 übersetzt: Inhaltssuche über verteilte Ressourcen
 +
-auch: Föderierte "Corpus Query Platform"
+auch: Föderierte “Corpus Query Platform”
 * _Suche nach Mustern in verteilten Text-Sammlungen_
 * kein zentraler Index!
 * Text-Ressourcen umfassen annotierte Korpora, Volltexte usw.
@@ -18,7 +18,7 @@ auch: Föderierte "Corpus Query Platform"
 *Interface-Spezifikation*
 
 * Beschreibung von Suchprotokoll (Anfragesprache, Formate und Kommunikationswege)
-"für homogenen Zugriff auf heterogene Suchmaschinen"
+“für homogenen Zugriff auf heterogene Suchmaschinen”
 * RESTful Protokoll
 
 *Such-Infrastruktur in CLARIN und Text+*
@@ -26,7 +26,59 @@ auch: Föderierte "Corpus Query Platform"
 * zentraler Client (Daten “Aggregator” und Webportal)
 * dezentrale Endpunkte an den Datenzentren (lokale Suchmaschinen auf Ressourcen)
 
+== Was umfasst die FCS? (2)
+
 *Software-Ökosystem primär in Java*
 
 * Bibliotheken (Java, Python, …)
 * Tools (Validator, Aggregator, Registry)
+
+== Voraussetzungen zur Teilnahme an der FCS
+
+* (eigene) Text-Ressourcen
+* Such-“Maschine” auf Text-Ressourcen
+** Minimum: Volltextsuche
+* Deployment von FCS-Endpunkt mit öffentlichem Zugriff
+
+[.columns]
+== Vor- und Nachteile für die FCS
+
+[.column]
+--
+*Vorteile*
+
+* Integration vieler Ressourcen, Verknüpfung und Vergleich von Ergebnissen
+* Integration mit anderen Tools (Weblicht, Registry/VLO, Switchboard, …)
+* gleiche Querys, Formate, Präsentation
+* keine doppelte Datenhaltung, Inkonsistenz
+--
+
+[.column]
+--
+*Nachteile*
+
+* keine Kontrolle über Ressourcen
+* keine deterministischen Ergebnisse (z.B. Links für Publikationen)
+* kein globales Ranking von Ergebnissen möglich
+--
+
+[.columns]
+== Vor- und Nachteile für die FCS Endpunkte
+
+[.column]
+--
+*Vorteile*
+
+* Kontrolle über Ressourcen und Suche (Ranking, Fuzzy, …)
+* keine Duplication von Daten durch zentralen Index
+* erhöhte Sichtbarkeit in größerem Ressourcenkatalog
+
+--
+
+[.column]
+--
+*Nachteile*
+
+* Deployment von (extra) Endpoint notwendig
+--
+
