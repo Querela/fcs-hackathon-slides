@@ -247,7 +247,11 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 ** Spezifikation und Implementierung
 ** Ziel: Unterstützung _zugangsbeschränkte Ressourcen_
 ** Absicherung des Aggregators über Shibboleth → Weitergabe von AAI-Attributen an Endpunkte
-* Vorarbeit aus CLARIAH-DE, Teil des Text+ Arbeitsplans (IDS Mannheim, Uni/SAW Leipzig, Vorarbeiten BBAW)
+** Vorarbeit aus CLARIAH-DE, Teil des Text+ Arbeitsplans (IDS Mannheim, Uni/SAW Leipzig, Vorarbeiten BBAW)
+
+[%notitle]
+== Aktuelle Arbeiten (2)
+
 * *Syntactic Search* (?)
 * Größerer Bedarf an föderierten Suchverfahren für Textressourcen in *Text+* (Editionen, Collections)
 
