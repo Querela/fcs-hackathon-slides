@@ -1,6 +1,9 @@
 = Text+ Resource and Search Integration Hackathon
+:author: Erik Körner <koerner@saw-leipzig.de>
+:date: 2023-11-16
 :revealjsdir: reveal.js
 :revealjs_theme: sky
 :source-highlighter: highlight.js
+:customcss: css/presentation.css
 
 include::fcs-intro.adoc[leveloffset=+1]

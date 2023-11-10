@@ -24,10 +24,14 @@ auch: Föderierte "Corpus Query Platform"
 "für homogenen Zugriff auf heterogene Suchmaschinen"
 * RESTful Protokoll
 
+== Was umfasst die FCS? (2)
+
 *Such-Infrastruktur in CLARIN und Text+*
 
 * zentraler Client (Daten “Aggregator” und Webportal)
 * dezentrale Endpunkte an den Datenzentren (lokale Suchmaschinen auf Ressourcen)
+
+== Was umfasst die FCS? (3)
 
 *Software-Ökosystem primär in Java*
 
