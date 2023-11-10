@@ -55,7 +55,6 @@ auch: Föderierte “Corpus Query Platform”
 * gleiche Querys, Formate, Präsentation
 * keine doppelte Datenhaltung, Inkonsistenz
 --
-
 [.column]
 --
 *Nachteile*
@@ -76,7 +75,6 @@ auch: Föderierte “Corpus Query Platform”
 * keine Duplication von Daten durch zentralen Index
 * erhöhte Sichtbarkeit in größerem Ressourcenkatalog
 --
-
 [.column]
 --
 *Nachteile*
@@ -133,6 +131,7 @@ auch: Föderierte “Corpus Query Platform”
 * EDC: European Demonstrator Case
 --
 
+[%notitle]
 == Geschichte (2)
 
 * *~ 2015/2016* Spec und Code für *FCS Core 2.0*
