@@ -211,8 +211,10 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
 image::fcsql-query-builder.png[Visual Query Builder for FCS-QL]
 
-[background-image="fcsql-kwic-results.png",background-size="contain"]
+//[background-image="fcsql-kwic-results.png",background-size="contain"]
 == Ergebnisvisualisierung
+
+image::fcsql-kwic-results.png[KWIC Results]
 
 == Ergebnisvisualisierung (2)
 
@@ -225,6 +227,10 @@ image::fcsql-adv-results.png[ADV Results]
 * 😎 “Awesome FCS” List: https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs] 
 mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 ** Text+ Ergänzungen (z.B. zu LexFCS/LexCQL/Forks/Software): https://gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md?ref_type=heads[gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md]
+
+[%notitle]
+== Aktueller Stand der FCS (2)
+
 * CLARIN Spezifikationen: https://github.com/clarin-eric/fcs-misc[github.com/clarin-eric/fcs-misc] 
 * Kleines Ökosystem (Code auf https://github.com/clarin-eric?q=fcs[Github]/Gitlab)
 ** Software-Libraries (SRU/FCS, Endpunkt + Client, Java/Python)
@@ -232,4 +238,16 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 ** Online-Validator für Endpunkte (http://clarin.ids-mannheim.de/srutest[srutest], Code: https://github.com/clarin-eric/fcs-endpoint-tester[Github])
 * Endpunkte-Registratur: https://centres.clarin.eu/fcs[centres.clarin.eu/fcs]
 
+== Aktuelle Arbeiten
+
+* *Lexical Resources* Erweiterung
+** erste Spezifikation und Implementierung in Text+
+** Offizielle Erweiterung von CLARIN → ~2024 Working Plan
+* *AAI*-Einbindung
+** Spezifikation und Implementierung
+** Ziel: Unterstützung _zugangsbeschränkte Ressourcen_
+** Absicherung des Aggregators über Shibboleth → Weitergabe von AAI-Attributen an Endpunkte
+* Vorarbeit aus CLARIAH-DE, Teil des Text+ Arbeitsplans (IDS Mannheim, Uni/SAW Leipzig, Vorarbeiten BBAW)
+* *Syntactic Search* (?)
+* Größerer Bedarf an föderierten Suchverfahren für Textressourcen in *Text+* (Editionen, Collections)
 
