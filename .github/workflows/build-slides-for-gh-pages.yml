@@ -32,8 +32,8 @@ jobs:
 
       - name: Copy slide resources
         run: |
-          mv -v images static/slides
-          mv -v css static/slides
+          mv -v images slides/
+          mv -v css slides/
 
       - name: Push generated files to branch 'gh-pages'
         run: |
