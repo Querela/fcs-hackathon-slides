@@ -1,4 +1,4 @@
-name: adoc
+name: build slides for gh-pages
 
 on:
   push:
@@ -20,32 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build HTML
-        run: asciidoctor -v -D docs -a data-uri --backend=html5 -o hackathon.html index.adoc
-
-      - name: Build PDF
-        run: asciidoctor-pdf -v -D docs -o hackathon.pdf index.adoc
-
-      - name: Store results
-        uses: actions/upload-artifact@v3
-        with:
-          name: docs
-          path: docs/*
-
       - name: Setup reveal.js
         run: |
           git clone -b 4.1.2 --depth 1 https://github.com/hakimel/reveal.js.git
-          mkdir slides/reveal.js
+          mkdir -p slides/reveal.js
           mv reveal.js/dist slides/reveal.js/
 
       - name: Build Slides
         run: asciidoctor-revealjs -v -D slides index.adoc
-
-      - name: Store results (slides)
-        uses: actions/upload-artifact@v3
-        with:
-          name: slides
-          path: slides/*
 
       - name: Push generated files to branch 'gh-pages'
         run: |
