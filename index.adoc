@@ -1,4 +1,5 @@
 = Title Slide
+:revealjsdir: reveal.js
 :revealjs_theme: sky
 :source-highlighter: highlight.js
 
