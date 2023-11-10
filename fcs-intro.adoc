@@ -147,7 +147,7 @@ auch: Föderierte “Corpus Query Platform”
 
 SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
-* Standardisiert durch Library of Congress (LoC) / OASIS
+* Standardisiert durch _Library of Congress (LoC)_ / _OASIS_
 ** RESTful
 ** *Explain*: Vorhandene Ressourcen
 *** Sprache, Annotationen, unterstützte Datenformate etc.
@@ -159,9 +159,7 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
 * verschiedene (optionale) Annotationsebenen (Layer)
 
-[%autofit]
-----
-[%noheader,cols="h,4*"]
+[%noheader,%autowidth,cols="h,4*"]
 |===
 |Volltext
 |Die
@@ -199,4 +197,24 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 | 
 | 
 |===
-----
+
+[background-image="explain.png",background-size="contain"]
+== Explain: Ressourcen-Discovery
+
+[background-image="explain-resources.png",background-size="contain"]
+== Explain: Ressourcenstruktur
+
+== Anfragesprache FCS-QL
+
+* Orientiert sich an CQP
+* Unterstützt verschiedene Annotationslayer
+
+image::fcsql-query-builder.png[Visual Query Builder for FCS-QL]
+
+[background-image="fcsql-kwic-results.png",background-size="contain"]
+== Ergebnisvisualisierung
+
+== Ergebnisvisualisierung (2)
+
+image::fcsql-adv-results.png[ADV Results]
+
