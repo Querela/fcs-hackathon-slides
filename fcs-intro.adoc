@@ -21,10 +21,13 @@ auch: Föderierte “Corpus Query Platform”
 “für homogenen Zugriff auf heterogene Suchmaschinen”
 * RESTful Protokoll
 
+[%step]
+--
 *Such-Infrastruktur in CLARIN und Text+*
 
 * zentraler Client (Daten “Aggregator” und Webportal)
 * dezentrale Endpunkte an den Datenzentren (lokale Suchmaschinen auf Ressourcen)
+--
 
 == Was umfasst die FCS? (2)
 
@@ -72,7 +75,6 @@ auch: Föderierte “Corpus Query Platform”
 * Kontrolle über Ressourcen und Suche (Ranking, Fuzzy, …)
 * keine Duplication von Daten durch zentralen Index
 * erhöhte Sichtbarkeit in größerem Ressourcenkatalog
-
 --
 
 [.column]
@@ -82,3 +84,23 @@ auch: Föderierte “Corpus Query Platform”
 * Deployment von (extra) Endpoint notwendig
 --
 
+== Vergleich FCS mit zentralem Index
+
+[cols="h,2,2"]
+|===
+|Daten
+|➕ bei Endpunkten
+|➖ doppelte Datenhaltung, mögliche Inkonsistenz (Alter, Änderungen); rechtlich evtl. keine Weitergabe möglich
+
+|Daten-Updates
+|➕ Endpunkte können schnell reagieren
+|➖ schwierig, z.B. Entfernen von Ressourcen bei rechtlichen Problemen; Updates mit längeren Zeiten verbunden, falls überhaupt möglich
+
+|globales Ranking
+|➖ sehr schwierig/unmöglich
+|➕ gut möglich (?), vermutlich implizite Annahme zu und Normalisierung von Daten für Indizierung
+
+|Facettierung
+|➖ schwierig (z.B. über externe Metadaten; nicht direkt vorgesehen)
+|➕ Indizierung erlaubt Clustering/Klassifikation nach Themen und Kategorien
+|===
