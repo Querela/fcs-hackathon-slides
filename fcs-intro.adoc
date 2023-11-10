@@ -146,6 +146,7 @@ auch: Föderierte “Corpus Query Platform”
 == Kommunikationsprotokoll
 
 SRU (Search/Retrieval via URL) / OASIS searchRetrieve
+
 * Standardisiert durch Library of Congress (LoC) / OASIS
 ** RESTful
 ** *Explain*: Vorhandene Ressourcen
@@ -158,6 +159,8 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
 * verschiedene (optionale) Annotationsebenen (Layer)
 
+[%autofit]
+----
 [%noheader,cols="h,4*"]
 |===
 |Volltext
@@ -196,4 +199,4 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 | 
 | 
 |===
-
+----
