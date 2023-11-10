@@ -141,7 +141,7 @@ auch: Föderierte “Corpus Query Platform”
 * *2022* FCS Schwerpunkt in Text+ (_Findability_)
 * *2023* neuer FCS-Maintainer in CLARIN
 
-[%notitle,background-image="images/LexFCS_Diagram_v3.png",background-size="contain"]
+[%notitle,background-image="LexFCS_Diagram_v3.png",background-size="contain"]
 == FCS Architektur
 
 

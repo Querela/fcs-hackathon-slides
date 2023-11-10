@@ -6,6 +6,7 @@
 :revealjs_width: 1408
 :revealjs_height: 792
 :source-highlighter: highlight.js
+:imagesdir: images
 :customcss: css/presentation.css
 
 include::fcs-intro.adoc[leveloffset=+1]
