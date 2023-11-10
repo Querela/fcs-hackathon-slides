@@ -26,8 +26,20 @@ jobs:
       - name: Build PDF
         run: asciidoctor-pdf -v -D docs -o hackathon.pdf index.adoc
 
+      - name: Store results
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs/*
+
       - name: Build Slides
         run: asciidoctor-revealjs -v -D slides index.adoc
+
+      - name: Store results (slides)
+        uses: actions/upload-artifact@v3
+        with:
+          name: slides
+          path: slides/*
 
       - name: Push generated files to branch 'gh-pages'
         run: |
