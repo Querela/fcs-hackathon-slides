@@ -27,13 +27,18 @@ jobs:
           mv reveal.js/dist slides/reveal.js/
           mv reveal.js/plugin slides/reveal.js/
 
-      - name: Build Slides
+      - name: Build slides
         run: asciidoctor-revealjs -v -D slides index.adoc
+
+      - name: Copy slide resources
+        run: |
+          mv -v images static/slides
+          mv -v css static/slides
 
       - name: Push generated files to branch 'gh-pages'
         run: |
           mkdir -p static/slides
-          mv slides/* static/slides
+          mv -v slides/* static/slides
           cd static/slides
           git init -b main
           git config user.name $GITHUB_ACTOR
