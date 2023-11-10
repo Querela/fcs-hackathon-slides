@@ -9,4 +9,13 @@
 :imagesdir: images
 :customcss: css/presentation.css
 
+[%notitle]
+ifdef::backend-revealjs[== Table of Contents]
+
+toc::[]
+
+<<<
+
 include::fcs-intro.adoc[leveloffset=+1]
+
+<<<
