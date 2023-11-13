@@ -75,8 +75,6 @@ Ende
 * seit Mitte 2022 Arbeit mit und an FCS im Rahmen von Text+
 * seit 2023 offiziell Maintainer für FCS in CLARIN-ERIC
 
-//-
-
 // TODO: clean break for floating environments for next slide
 
 [.columns]

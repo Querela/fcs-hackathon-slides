@@ -161,15 +161,15 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
 * verschiedene (optionale) Annotationsebenen (Layer)
 
-[.x-small]
+[.xx-small]
 --
 [%noheader,%autowidth,cols="h,4*"]
 |===
 |Volltext
-|Die
-|Autos
-|sind
-|schnell
+s|Die
+s|Autos
+s|sind
+s|schnell
 
 |Wortart
 |DET
