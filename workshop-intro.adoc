@@ -52,6 +52,7 @@ Ende
 ** Test mit Validator & Integration in Aggregator
 * Präsentation im gemeinsamen Aggregator?
 
+[.left]
 == Über mich
 
 * Erik Körner
