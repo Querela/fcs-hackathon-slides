@@ -110,7 +110,7 @@ image::textplus-structure.png[Text+ Überblick]
 * Universitäten, Forschungszentren, Bibliotheken und Archive
 * gegründet 2012
 --
-[.column.is-one-fifth]
+[.column.is-one-fourth]
 --
 image::clarin-map.png[Text+ Überblick]
 --

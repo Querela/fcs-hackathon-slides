@@ -1,7 +1,55 @@
-
 /* --- Layout Helper  --------------------------------------------------- */
 
 /* ? */
 .reveal .left {
   text-align: left;
+}
+
+.small p,
+.small li,
+p.small,
+div.small,
+span.small,
+.small code,
+.TABLE.small,
+.small TH {
+  font-size: 94% !important;
+}
+
+.x-small p,
+.x-small li,
+p.x-small,
+div.x-small,
+span.x-small,
+.x-small code,
+TABLE.x-small,
+.x-small TH {
+  font-size: 86% !important;
+}
+
+.reveal .x-small TH,
+.reveal .x-small TD,
+.x-small TD P {
+  padding: 0.1em 0.25em;
+  margin: 8px 0;
+}
+
+.xx-small p,
+.xx-small li,
+p.xx-small,
+div.xx-small,
+span.xx-small,
+.xx-small code,
+.xx-small TABLE,
+.xx-small TH {
+  font-size: 78% !important;
+}
+
+.small LI P {
+  margin: 12px 0;
+}
+
+.x-small LI P,
+.xx-small LI P {
+  margin: 6px 0;
 }

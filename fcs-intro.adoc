@@ -161,7 +161,7 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
 * verschiedene (optionale) Annotationsebenen (Layer)
 
-[%noheader,%autowidth,cols="h,4*"]
+[%noheader,%autowidth,cols="h,4*",.x-small]
 |===
 |Volltext
 |Die
@@ -200,7 +200,7 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 | 
 |===
 
-//[background-image="explain.png",background-size="contain"]
+
 == Explain: Ressourcen-Discovery
 
 image::epdesc-1.png[Endpoint Description]
@@ -209,7 +209,7 @@ image::epdesc-1.png[Endpoint Description]
 
 image::epdesc-2.png[Endpoint Description, erweiterbar]
 
-//[background-image="explain-resources.png",background-size="contain"]
+//[background-image="epdesc-3.png",background-size="contain"]
 == Explain: Ressourcenstruktur
 
 image::epdesc-3.png[Endpoint Description, Ressourcenstruktur]
