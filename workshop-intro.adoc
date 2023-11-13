@@ -12,7 +12,7 @@
 15:30 Uhr +
 20:00 Uhr
 --
-[.column]
+[.column.has-text-left]
 --
 Vortrag: Einführung in die Föderierte Inhaltssuche +
 Teilnehmer: Vorstellung Projekte und Ressourcen +
@@ -25,7 +25,7 @@ Get-together
 [.columns]
 == Agenda Freitag (17.11.2023)
 
-[.column]
+[.column.is-one-fifth.has-text-right]
 --
 9:00 Uhr +
 12:00 Uhr +
@@ -33,7 +33,7 @@ Get-together
 14:00 Uhr +
 15:00 Uhr
 --
-[.column]
+[.column.has-text-left]
 --
 Coding-Session +
 Mittagspause +
@@ -88,16 +88,22 @@ image::textplus-overview.png[Text+ Überblick]
 
 image::textplus-structure.png[Text+ Überblick]
 
+[.columns]
 == CLARIN-ERIC
 
+[.column]
+--
 * *CLARIN* = _*C*ommon *La*nguage *R*esources and Technology *In*frastructure_
 * *ERIC* = _*E*uropean *R*esearch *I*nfrastructure *C*onsortium_
 * verteilte digitale Forschungsinfrastruktur
 * teilnehmende Zentren aus Europa und darüber hinaus
 * Universitäten, Forschungszentren, Bibliotheken und Archive
 * gegründet 2012
-
+--
+[.column]
+--
 image::clarin-map.png[Text+ Überblick]
+--
 
 == CLARIN-ERIC
 
