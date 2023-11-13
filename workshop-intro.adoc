@@ -84,3 +84,25 @@ Ende
 * Start 10/2021
 
 image::textplus-overview.png[Text+ Überblick]
+
+== Text+ – Struktureller Aufbau
+
+image::textplus-structure.png[Text+ Überblick]
+
+== CLARIN-ERIC
+
+* *CLARIN* = _*C*ommon *La*nguage *R*esources and Technology *In*frastructure_
+* *ERIC* = _*E*uropean *R*esearch *I*nfrastructure *C*onsortium_
+* verteilte digitale Forschungsinfrastruktur
+* teilnehmende Zentren aus Europa und darüber hinaus
+* Universitäten, Forschungszentren, Bibliotheken und Archive
+* gegründet 2012
+
+image::clarin-map.png[Text+ Überblick]
+
+== CLARIN-ERIC
+
+* unterstützt Forschung in den _Geistes- und Sozialwissenschaften_
+* _einfacher und nachhaltiger_ Zugriff auf _multimodale digitale Sprachdaten_ (Text, Audio, Video) und _fortschrittliche Tools_ (Datensätze erkunden, analysieren, kombinieren)
+* _interoperable_ Tools und Daten → Datensammlungen können kombiniert und Tools aus verschiedenen Quellen _verkettet_ werden, um unabhängig von ihrem Standort Operationen unterschiedlicher Komplexität auszuführen
+* basierend auf _standardisierten_ Schnittstellen und Kommunikationsprotokollen
