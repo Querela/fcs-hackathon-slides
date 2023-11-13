@@ -213,14 +213,18 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
 image::fcsql-query-builder.png[Visual Query Builder for FCS-QL]
 
-//[background-image="fcsql-kwic-results.png",background-size="contain"]
+//[background-image="fcs-results-hits.png",background-size="contain"]
 == Ergebnisvisualisierung
 
-image::fcsql-kwic-results.png[KWIC Results]
+image::fcs-results-hits.png[HITS Results]
 
 == Ergebnisvisualisierung (2)
 
-image::fcsql-adv-results.png[ADV Results]
+image::fcs-results-kwic.png[KWIC Results]
+
+== Ergebnisvisualisierung (3)
+
+image::fcs-results-adv.png[ADV Results]
 
 == Aktueller Stand der FCS
 
