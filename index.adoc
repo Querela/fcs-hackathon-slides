@@ -8,12 +8,17 @@
 :source-highlighter: highlight.js
 :imagesdir: images
 :customcss: css/presentation.css
+:icons: font
 :toclevels: 1
 
 [%notitle,%discrete]
 ifdef::backend-revealjs[== Table of Contents]
 
 toc::[]
+
+<<<
+
+include::workshop-intro.adoc[leveloffset=+1]
 
 <<<
 
