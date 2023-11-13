@@ -6,7 +6,7 @@
 
 [.column.is-one-fifth.has-text-right]
 --
- 9:00 Uhr +
+9:00 Uhr +
 10:30 Uhr +
 12:00 Uhr +
 13:00 Uhr +
@@ -28,7 +28,7 @@ Get-together
 
 [.column]
 --
- 9:00 Uhr +
+9:00 Uhr +
 12:00 Uhr +
 13:00 Uhr +
 14:00 Uhr +
@@ -42,3 +42,23 @@ Coding-Session +
 Teilnehmer: Präsentation der Ergebnisse +
 Ende
 --
+
+== Ziel des Workshop
+
+* Verständnis von der FCS und der technischen Infrastruktur
+* Kenntnisse zu Referenzbibliotheken und Werkzeugen
+* Aufbau eigener FCS Endpunkte
+** Entwicklung
+** Debug und Deployment
+** Test mit Validator & Integration in Aggregator
+* Präsentation im gemeinsamen Aggregator?
+
+== Über mich
+
+* Erik Körner
+- Master Informatik, PhD, Schwerpunkt NLP
+* Studium an der Universität Leipzig …
+* … Wiss. Mitarbeiter an der Universität Leipzig, ASV …
+* … aktuell im Projekt Text+ an der SAW
+- seit Mitte 2022 Arbeit mit und an FCS im Rahmen von Text+
+- seit 2023 offiziell Maintainer für FCS in CLARIN-ERIC
