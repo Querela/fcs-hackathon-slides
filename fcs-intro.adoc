@@ -95,7 +95,9 @@ auch: Föderierte “Corpus Query Platform”
 |➖ schwierig, z.B. Entfernen von Ressourcen bei rechtlichen Problemen; Updates mit längeren Zeiten verbunden, falls überhaupt möglich
 |===
 
+ifdef::backend-revealjs[]
 == Vergleich FCS mit zentralem Index (2)
+endif::[]
 
 [%noheader,cols="h,3,3"]
 |===
@@ -255,34 +257,3 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 * *Syntactic Search* (?)
 * Größerer Bedarf an föderierten Suchverfahren für Textressourcen in *Text+* (Editionen, Collections)
 
-[.degrade]
-=== Type Inference -- Bordercases
-[source,java]
-----
-// var wontCompile; <1>
-// var wontCompile = null;
-// var wontCompile = {-1, 1};
-
-var myMap = new HashMap<>();
-myMap.put(42, "The answer");
-// var wontCompile = myMap.get(42).trim(); <2>
-
-// var wontCompile = String::toUpperCase; <3>
-
-var myPredicate = new IntPredicate() {
-    public boolean test(int value) {  return value > 0; }  };
-// myPredicate = (int i) -> (i % 2) == 0; <4>
-----
-
-<1> Type _must be inferrable_ – no late init, `null` or array literals
-<2> Type _inferred at declaration_ time: `Map<Object, Object>`
-<3> _Method references_ must be explicit
-<4> _Anonymous Types_ are types-per-instance; therefore no reassignment
-
-[.notes]
---
-* Type _must be inferrable_ – no late init, `null` or array literals
-* Type _inferred at declaration_ time: `Map<Object, Object>`
-* _Method references_ must be explicit
-* _Anonymous Types_ are types-per-instance; therefore no reassignment
---
