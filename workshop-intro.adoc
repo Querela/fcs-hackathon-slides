@@ -56,9 +56,12 @@ Ende
 == Über mich
 
 * Erik Körner
+
 - Master Informatik, PhD, Schwerpunkt NLP
+
 * Studium an der Universität Leipzig …
 * … Wiss. Mitarbeiter an der Universität Leipzig, ASV …
 * … aktuell im Projekt Text+ an der SAW
+
 - seit Mitte 2022 Arbeit mit und an FCS im Rahmen von Text+
 - seit 2023 offiziell Maintainer für FCS in CLARIN-ERIC
