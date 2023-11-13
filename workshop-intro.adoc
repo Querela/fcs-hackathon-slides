@@ -52,23 +52,26 @@ Ende
 ** Test mit Validator & Integration in Aggregator
 * Präsentation im gemeinsamen Aggregator?
 
-[.left]
 == Über mich
 
+[.left]
 * Erik Körner
 
 //-
 
+[.left]
 * Master Informatik, PhD, Schwerpunkt NLP
 
 //-
 
+[.left]
 * Studium an der Universität Leipzig …
 * … Wiss. Mitarbeiter an der Universität Leipzig, ASV …
 * … aktuell im Projekt Text+ an der SAW
 
 //-
 
+[.left]
 * seit Mitte 2022 Arbeit mit und an FCS im Rahmen von Text+
 * seit 2023 offiziell Maintainer für FCS in CLARIN-ERIC
 
@@ -83,17 +86,14 @@ Ende
 ** Stiftungen
 * Start 10/2021
 
+[.right]
 image::textplus-overview.png[Text+ Überblick]
 
 == Text+ – Struktureller Aufbau
 
 image::textplus-structure.png[Text+ Überblick]
 
-[.columns]
 == CLARIN-ERIC
-
-[.right]
-image::clarin-map.png[Text+ Überblick]
 
 * *CLARIN* = *C*_ommon_ *La*_nguage_ *R*_esources and Technology_ *In*_frastructure_
 * *ERIC* = *E*_uropean_ *R*_esearch_ *I*_nfrastructure_ *C*_onsortium_
@@ -101,6 +101,9 @@ image::clarin-map.png[Text+ Überblick]
 * teilnehmende Zentren aus Europa und darüber hinaus
 * Universitäten, Forschungszentren, Bibliotheken und Archive
 * gegründet 2012
+
+[.right]
+image::clarin-map.png[Text+ Überblick]
 
 
 == CLARIN-ERIC
