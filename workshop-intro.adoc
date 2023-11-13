@@ -66,8 +66,10 @@ Ende
 
 [.left]
 * Studium an der Universität Leipzig …
-* … Wiss. Mitarbeiter an der Universität Leipzig, ASV …
-* … aktuell im Projekt Text+ an der SAW
++
+… Wiss. Mitarbeiter an der Universität Leipzig, ASV …
++
+… aktuell im Projekt Text+ an der SAW
 
 //-
 
@@ -91,7 +93,7 @@ Ende
 ** Stiftungen
 * Start 10/2021
 --
-[.column.is-one-fifth]
+[.column.is-one-fourth]
 --
 image::textplus-overview.png[Text+ Überblick]
 --

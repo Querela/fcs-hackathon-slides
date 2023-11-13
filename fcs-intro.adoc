@@ -161,7 +161,7 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 
 * verschiedene (optionale) Annotationsebenen (Layer)
 
-[.xx-small]
+[.x-small]
 --
 [%noheader,%autowidth,cols="h,4*"]
 |===
