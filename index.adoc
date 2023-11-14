@@ -33,3 +33,19 @@ include::fcs-intro.adoc[leveloffset=+1]
 include::fcs-wegweiser.adoc[leveloffset=+1]
 
 <<<
+
+== Technische Grundlagen
+
+== Referenzimplementierungen
+
+== Resources und Data Views
+
+== Query Translation
+
+== Endpunkt-Entwicklung
+
+== Deployment
+
+<<<
+
+include::fcs-ressourcen.adoc[leveloffset=+1]

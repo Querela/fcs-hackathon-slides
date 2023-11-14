@@ -1,0 +1,21 @@
+= Ressourcen
+
+== Links
+
+* Umfassende FCS Link-Sammlung(en): 
+https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs],
+https://gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md[gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md]
+
+* CLARIN Übersichtsseite: 
+https://www.clarin.eu/content/federated-content-search-clarin-fcs-technical-details[www.clarin.eu/content/federated-content-search-clarin-fcs-technical-details]
+
+* CLARIN Code Github/Gitlab: 
+https://github.com/clarin-eric/?q=fcs[github.com/clarin-eric/?q=fcs],
+https://gitlab.com/CLARIN-ERIC/?filter=fcs[gitlab.com/CLARIN-ERIC/?filter=fcs],
+https://github.com/clarin-eric/fcs-misc/[github.com/clarin-eric/fcs-misc/] (Specs, Docs, usw.)
+
+== Publikationen
+
+* im Rahmen von Text+ → auf https://www.zotero.org/groups/4533881/textplus/tags/FCS/library[Zotero.org] mit Tag “FCS”
+* Auflistung in https://gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md?ref_type=heads#publications[Text+ Awesome FCS] Liste
+* im Rahmen von CLARIN? → keine extra Bibliographie
