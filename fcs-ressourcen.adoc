@@ -2,16 +2,16 @@
 
 == Links
 
-* Umfassende FCS Link-Sammlung(en): 
-https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs],
+* Umfassende FCS Link-Sammlung(en): +
+https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs], +
 https://gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md[gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md]
 
-* CLARIN Übersichtsseite: 
+* CLARIN Übersichtsseite: +
 https://www.clarin.eu/content/federated-content-search-clarin-fcs-technical-details[www.clarin.eu/content/federated-content-search-clarin-fcs-technical-details]
 
-* CLARIN Code Github/Gitlab: 
-https://github.com/clarin-eric/?q=fcs[github.com/clarin-eric/?q=fcs],
-https://gitlab.com/CLARIN-ERIC/?filter=fcs[gitlab.com/CLARIN-ERIC/?filter=fcs],
+* CLARIN Code Github/Gitlab: +
+https://github.com/clarin-eric/?q=fcs[github.com/clarin-eric/?q=fcs], +
+https://gitlab.com/CLARIN-ERIC/?filter=fcs[gitlab.com/CLARIN-ERIC/?filter=fcs], +
 https://github.com/clarin-eric/fcs-misc/[github.com/clarin-eric/fcs-misc/] (Specs, Docs, usw.)
 
 == Publikationen
