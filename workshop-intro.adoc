@@ -71,8 +71,6 @@
 [.columns]
 == Text+
 
-image::textplus-overview.png[Text+ Überblick,float=right]
-
 * _NFDI-Konsortium_ zum Aufbau einer auf _Sprach- und Textdaten_ ausgerichteten Forschungsdateninfrastruktur
 * ungefähr 30 beteiligte Institutionen:
 ** Akademien
@@ -81,6 +79,8 @@ image::textplus-overview.png[Text+ Überblick,float=right]
 ** Archive
 ** Stiftungen
 * Start 10/2021
+
+image::textplus-overview.png[Text+ Überblick,float=right]
 
 == Text+ – Struktureller Aufbau
 
