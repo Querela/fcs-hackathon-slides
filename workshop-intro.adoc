@@ -70,6 +70,8 @@
 
 == Text+
 
+image::textplus-overview.png[Text+ Überblick,float=right]
+
 * _NFDI-Konsortium_ zum Aufbau einer auf _Sprach- und Textdaten_ ausgerichteten Forschungsdateninfrastruktur
 * ungefähr 30 beteiligte Institutionen:
 ** Akademien
@@ -79,15 +81,12 @@
 ** Stiftungen
 * Start 10/2021
 
-image::textplus-overview.png[Text+ Überblick,float=right]
-
-
 == Text+ – Struktureller Aufbau
 
 image::textplus-structure.png[Text+ Überblick]
 
+[.columns]
 == CLARIN-ERIC
-
 
 * *CLARIN* = **C**_ommon_ **La**_nguage_ **R**_esources and Technology_ **In**_frastructure_
 * *ERIC* = **E**_uropean_ **R**_esearch_ **I**_nfrastructure_ **C**_onsortium_
