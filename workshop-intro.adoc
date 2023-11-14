@@ -1,9 +1,8 @@
 = Begrüßung und Überblick
 
-[.columns]
 == Agenda Donnerstag (16.11.2023)
 
-[%autowidth,cols=">,<",frame=none]
+[%autowidth,cols=">,<",frame=none,grid=none]
 |===
 |9:00 Uhr
 |Vortrag: Einführung in die Föderierte Inhaltssuche
@@ -24,26 +23,25 @@
 |Get-together
 |===
 
-
-[.columns]
 == Agenda Freitag (17.11.2023)
 
-[.column.is-one-fifth.has-text-right]
---
-9:00 Uhr +
-12:00 Uhr +
-13:00 Uhr +
-14:00 Uhr +
-15:00 Uhr
---
-[.column.has-text-left]
---
-Coding-Session +
-Mittagspause +
-Coding-Session +
-Teilnehmer: Präsentation der Ergebnisse +
-Ende
---
+[%autowidth,cols=">,<",frame=none,grid=none]
+|===
+|9:00 Uhr
+|Coding-Session
+
+|12:00 Uhr
+|Mittagspause
+
+|13:00 Uhr
+|Coding-Session
+
+|14:00 Uhr
+|Teilnehmer: Präsentation der Ergebnisse
+
+|15:00 Uhr
+|Ende
+|===
 
 == Ziel des Workshop
 
