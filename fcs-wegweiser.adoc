@@ -78,9 +78,8 @@ endif::[]
 == Voraussetzung an lokale Suchmaschine
 
 ❗ Volltextsuche
-[.ms-5.mb-5]
+[.ms-5]
 ❓ mit Treffer-Markierung
-
 [.mb-5]
 ❓ Corpus-Suche (Annotationen über segmentiertem Text)
 
