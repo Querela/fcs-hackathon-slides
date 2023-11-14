@@ -3,33 +3,33 @@
 [.left]
 == Entwicklungsentscheidungen
 
-
 ❓ Kann ich Endpunkt selber hosten?
-[.ms-5]
+[.ms-5.mb-4]
 ❗ nein → HelpDesk: CLARIN, Text+
 
 ❓ Welche Art von Daten besitze ich?
-[.ps-5]
+[.mds-5.mb-4]
 ❗ Rohtext, Vertical/CONLL, TEI, …
 
 ❓ Welche Suchmaschine nutze ich / kann ich nutzen?
-[.ps-5]
+[.ms-5.mb-4]
 ❗ KorAP, Korp/CWB, Lucene/Solr/ElasticSearch, (No)SketchEngine, …
 
 ifdef::backend-revealjs[]
+[.left]
 == Entwicklungsentscheidungen (2)
 endif::[]
 
 ❓ Anpassung oder Neuentwicklung?
-[.ps-5]
+[.ms-5.mb-4]
 ❗ Liste bestehender Endpunkt-Implementierungen (Awesome List)
 
 ❓ Programmiersprache?
-[.ps-5]
+[.ms-5.mb-4]
 ❗ Java, Python, (PHP, XQuery)
 
 ❓ Eigenentwicklung: Nutzung der Referenzbibliotheken (Java, Python)
-[.ps-5]
+[.ms-5]
 ❗ Maven Archetype, Korp
-[.ps-5]
+[.ms-5]
 ❗ SRU + FCS Spezifikationen …
