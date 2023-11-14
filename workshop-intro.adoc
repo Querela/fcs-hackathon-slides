@@ -68,6 +68,7 @@
 * seit Mitte 2022 Arbeit mit und an FCS im Rahmen von Text+
 * seit 2023 offiziell Maintainer für FCS in CLARIN-ERIC
 
+[.columns]
 == Text+
 
 image::textplus-overview.png[Text+ Überblick,float=right]
