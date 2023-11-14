@@ -3,24 +3,27 @@
 [.columns]
 == Agenda Donnerstag (16.11.2023)
 
-[.column.is-one-fifth.has-text-right]
---
-9:00 Uhr +
-10:30 Uhr +
-12:00 Uhr +
-13:00 Uhr +
-15:30 Uhr +
-20:00 Uhr
---
-[.column.has-text-left]
---
-Vortrag: Einführung in die Föderierte Inhaltssuche +
-Teilnehmer: Vorstellung Projekte und Ressourcen +
-Mittagspause +
-Vortrag: Implementierung und Query Translation +
-Coding-Session +
-Get-together
---
+[%autowidth,cols=">,<",frame=none]
+|===
+|9:00 Uhr
+|Vortrag: Einführung in die Föderierte Inhaltssuche
+
+|10:30 Uhr
+|Teilnehmer: Vorstellung Projekte und Ressourcen
+
+|12:00 Uhr
+|Mittagspause
+
+|13:00 Uhr
+|Vortrag: Implementierung und Query Translation
+
+|15:30 Uhr
+|Coding-Session
+
+|20:00 Uhr
+|Get-together
+|===
+
 
 [.columns]
 == Agenda Freitag (17.11.2023)
