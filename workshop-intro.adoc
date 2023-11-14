@@ -68,11 +68,8 @@
 * seit Mitte 2022 Arbeit mit und an FCS im Rahmen von Text+
 * seit 2023 offiziell Maintainer für FCS in CLARIN-ERIC
 
-[.columns]
 == Text+
 
-[.column]
---
 * _NFDI-Konsortium_ zum Aufbau einer auf _Sprach- und Textdaten_ ausgerichteten Forschungsdateninfrastruktur
 * ungefähr 30 beteiligte Institutionen:
 ** Akademien
@@ -81,17 +78,14 @@
 ** Archive
 ** Stiftungen
 * Start 10/2021
---
-[.column.is-one-fourth]
---
-image::textplus-overview.png[Text+ Überblick]
---
+
+image::textplus-overview.png[Text+ Überblick,float=right]
+
 
 == Text+ – Struktureller Aufbau
 
 image::textplus-structure.png[Text+ Überblick]
 
-[.columns]
 == CLARIN-ERIC
 
 
