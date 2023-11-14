@@ -8,8 +8,11 @@
 :source-highlighter: highlight.js
 :imagesdir: images
 :customcss: css/presentation.css
+:title-slide-background-image: textplus-fcs.002.png
 :toclevels: 1
 //:icons: font
+
+// images/textplus-fcs.002.png
 
 [%notitle,%discrete]
 ifdef::backend-revealjs[== Table of Contents]
