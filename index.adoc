@@ -10,7 +10,7 @@
 :customcss: css/presentation.css
 :title-slide-background-image: textplus-fcs.002.png
 :toclevels: 1
-//:icons: font
+:icons:
 
 // images/textplus-fcs.002.png
 
