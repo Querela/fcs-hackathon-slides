@@ -1,6 +1,6 @@
 /* --- GLOBALS ---------------------------------------------------------- */
 
-.reveal p {
+.reveal .slide-content > .ulist {
   text-align: left;
 }
 
