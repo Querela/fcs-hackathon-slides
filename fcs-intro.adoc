@@ -272,3 +272,67 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 * *Syntactic Search* (?)
 * Größerer Bedarf an föderierten Suchverfahren für Textressourcen in *Text+* (Editionen, Collections)
 
+== Aktueller Stand bzgl. **Lexical Resources**
+
+* CLARIN-EU Taskforce
+* Arbeitsplan CLARIN ERIC: „extending the protocol to cover additional data types (e.g. lexica) will be explored“
+** im CLARIN 2024 Working Plan
+* Interessensbekundungen aus verschiedenen Ländern
+* Erste Vorarbeiten: „RABA“ (Estland): u.a. „Eesti Wordnet“
+* Erste Spezifikation und Implementierung in Text+
+** Spezifikation auf Zenodo: https://zenodo.org/records/7849754[zenodo.org/records/7849754]
+** Präsentation auf eLex 2023: https://elex.link/elex2023/wp-content/uploads/69.pdf[“A Federated Search and Retrieval Platform for Lexical Resources in Text+ and CLARIN”]
+** Aggregator: https://fcs.text-plus.org/?&queryType=lex[fcs.text-plus.org/?queryType=lex]
+
+== Aktueller Stand von Teilnehmenden
+
+**CLARIN** (https://contentsearch.clarin.eu/[contentsearch.clarin.eu], https://centres.clarin.eu/fcs[Registry])
+
+* 209 Ressourcen (94 in Advanced)
++
+in 61 Sprachen
++
+von 20 Institutionen in 12 Ländern
+
+**Text+** (https://fcs.text-plus.org/[fcs.text-plus.org])
+
+* 53 Ressourcen (17 in Advanced, 30 Lexical)
++
+in 6 Sprachen
++
+von 9 Institutionen in Deutschland
+
+== Integration in FCS Infrastruktur
+
+**Text+**
+
+* Side-Loading im Aggregator
+* _WIP_: Registry (Verzeichnis von Endpunkten)
+
+**CLARIN**
+
+* Alpha/Beta über Side-Loading in den Aggregator
+* Stable/Long-Term: Eintrag in Centre Registry
+** CLARIN Account + https://www.clarin.eu/webform/registration-form-centre-registry[Formular] als Centre
+** damit auch Monitoring etc.
+
+== Weitere Nutzung der FCS
+
+* Entwicklung eines alternativen Aggregator-Frontends als _Web Component_
+** Code: https://git.saw-leipzig.de/text-plus/FCS/textplus-fcs-store[Vue.js Store] + https://git.saw-leipzig.de/text-plus/FCS/textplus-fcs-vuetify[Vuetify Komponenten (Dialog)]; https://tppssi-demo.saw-leipzig.de/[Demo]
+** Nutzung der Aggregator-API
+** Einschränkung auf Teilmenge der Ressourcen, z.B. für Integration auf eigener Website
+** Facettierung, alternative Visualisierung
+
+== Bootstrapping Endpunkt Entwicklung
+
+* Java: Maven Archetype https://github.com/clarin-eric/fcs-endpoint-archetype[github.com/clarin-eric/fcs-endpoint-archetype] 
+
+* Java & Python (Referenzimplementierung Korp):
+** https://github.com/clarin-eric/fcs-korp-endpoint[github.com/clarin-eric/fcs-korp-endpoint]
+** https://github.com/Querela/fcs-korp-endpoint-python[github.com/Querela/fcs-korp-endpoint-python]
+
+* 😎 “Awesome FCS” List: https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs]
+** Liste von Referenz-Implementierungen, Endpunkten, Query-Parsern
+** Code zu FCS SRU Aggregator und SRU Validator
+
