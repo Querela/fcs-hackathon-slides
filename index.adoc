@@ -28,3 +28,7 @@ include::workshop-intro.adoc[leveloffset=+1]
 include::fcs-intro.adoc[leveloffset=+1]
 
 <<<
+
+include::fcs-wegweiser.adoc[leveloffset=+1]
+
+<<<

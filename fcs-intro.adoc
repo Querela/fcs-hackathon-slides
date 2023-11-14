@@ -1,7 +1,8 @@
 = Einführung in die Föderierte Inhaltssuche (FCS)
-:background-video: https://drive.google.com/file/d/1VpeJNY-sAseHmW-yDVDRFjrhzdK3n44K
-:background-video-loop: true
-:background-video-muted: true
+// :background-video: https://drive.google.com/file/d/1VpeJNY-sAseHmW-yDVDRFjrhzdK3n44K
+// :background-video-loop: true
+// :background-video-muted: true
+// :background-opacity: 0.7
 
 == Was ist die FCS?
 
