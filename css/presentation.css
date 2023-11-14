@@ -16,7 +16,8 @@
 
 /* --- Layout Helper  --------------------------------------------------- */
 
-.reveal .paragraph.left {
+.reveal .paragraph.left,
+.reveal .left .paragraph {
   text-align: left;
 }
 
