@@ -94,8 +94,8 @@ image::textplus-structure.png[Text+ Überblick]
 == CLARIN-ERIC
 
 
-* *CLARIN* = **C**_ommon_ *La*_nguage_ **R**__esources and Technology__ *In*__frastructure__
-* *ERIC* = *E*_uropean_ *R*_esearch_ *I*_nfrastructure_ *C*_onsortium_
+* *CLARIN* = **C**_ommon_ **La**_nguage_ **R**_esources and Technology_ **In**_frastructure_
+* *ERIC* = **E**_uropean_ **R**_esearch_ **I**_nfrastructure_ **C**_onsortium_
 * verteilte digitale Forschungsinfrastruktur
 * teilnehmende Zentren aus Europa und darüber hinaus
 * Universitäten, Forschungszentren, Bibliotheken und Archive
