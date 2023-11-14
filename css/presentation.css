@@ -16,6 +16,10 @@
 
 /* --- Layout Helper  --------------------------------------------------- */
 
+.reveal .paragraph.left {
+  text-align: left;
+}
+
 .small p,
 .small li,
 .small code,
