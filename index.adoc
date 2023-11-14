@@ -9,6 +9,7 @@
 :imagesdir: images
 :customcss: css/presentation.css
 :title-slide-background-image: textplus-fcs.002.png
+:background-opacity: 0.5
 :toclevels: 1
 :icons:
 
