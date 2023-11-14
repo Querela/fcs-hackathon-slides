@@ -1,14 +1,17 @@
 = Wegweiser Endpunktentwicklung
 
+[.left]
 == Entwicklungsentscheidungen
 
-* ❓ Kann ich Endpunkt selber hosten?
-** ❗ nein → HelpDesk: CLARIN, Text+
 
-//-
+❓ Kann ich Endpunkt selber hosten?
+[.ps-4]
+❗ nein → HelpDesk: CLARIN, Text+
 
+[.left]
 * ❓ Welche Art von Daten besitze ich?
-** ❗ Rohtext, Vertical/CONLL, TEI, …
+[.left.ps-4]
+❗ Rohtext, Vertical/CONLL, TEI, …
 
 //-
 
