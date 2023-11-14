@@ -23,8 +23,8 @@ jobs:
       - name: Build HTML
         run: asciidoctor -v -D docs -a data-uri --backend=html5 -o hackathon.html index.adoc
 
-      - name: Build PDF
-        run: asciidoctor-pdf -v -D docs -o hackathon.pdf index.adoc
+      #- name: Build PDF
+      #  run: asciidoctor-pdf -v -D docs -o hackathon.pdf index.adoc
 
       - name: Store results
         uses: actions/upload-artifact@v3
