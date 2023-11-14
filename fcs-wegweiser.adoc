@@ -1,0 +1,26 @@
+= Wegweiser Endpunktentwicklung
+
+== Entwicklungsentscheidungen
+
+* Kann ich Endpunkt selber hosten?
+** nein → HelpDesk: CLARIN, Text+
+
+* Welche Art von Daten besitze ich?
+** Rohtext, Vertical/CONLL, TEI, …
+
+* Welche Suchmaschine nutze ich / kann ich nutzen?
+** KorAP, Korp/CWB, Lucene/Solr/ElasticSearch, (No)SketchEngine, …
+
+ifdef::backend-revealjs[]
+== Entwicklungsentscheidungen (2)
+endif::[]
+
+* Anpassung oder Neuentwicklung?
+** Liste bestehender Endpunkt-Implementierungen (Awesome List)
+
+* Programmiersprache?
+** Java, Python, (PHP, XQuery)
+
+* Eigenentwicklung: Nutzung der Referenzbibliotheken (Java, Python)
+** Maven Archetype, Korp
+** SRU + FCS Spezifikationen …
