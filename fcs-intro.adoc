@@ -281,6 +281,11 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 ** im CLARIN 2024 Working Plan
 * Interessensbekundungen aus verschiedenen Ländern
 * Erste Vorarbeiten: „RABA“ (Estland): u.a. „Eesti Wordnet“
+
+ifdef::backend-revealjs[]
+== Aktueller Stand bzgl. **Lexical Resources** (2)
+endif::[]
+
 * Erste Spezifikation und Implementierung in Text+
 ** Spezifikation auf Zenodo: https://zenodo.org/records/7849754[zenodo.org/records/7849754]
 ** Präsentation auf eLex 2023: https://elex.link/elex2023/wp-content/uploads/69.pdf[“A Federated Search and Retrieval Platform for Lexical Resources in Text+ and CLARIN”]
@@ -288,6 +293,7 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 
 == Aktueller Stand von Teilnehmenden
 
+[.left]
 **CLARIN** (https://contentsearch.clarin.eu/[contentsearch.clarin.eu], https://centres.clarin.eu/fcs[Registry])
 
 * 209 Ressourcen (94 in Advanced)
@@ -296,6 +302,7 @@ in 61 Sprachen
 +
 von 20 Institutionen in 12 Ländern
 
+[.left]
 **Text+** (https://fcs.text-plus.org/[fcs.text-plus.org])
 
 * 53 Ressourcen (17 in Advanced, 30 Lexical)
@@ -306,11 +313,13 @@ von 9 Institutionen in Deutschland
 
 == Integration in FCS Infrastruktur
 
+[.left]
 **Text+**
 
 * Side-Loading im Aggregator
 * _WIP_: Registry (Verzeichnis von Endpunkten)
 
+[.left]
 **CLARIN**
 
 * Alpha/Beta über Side-Loading in den Aggregator
