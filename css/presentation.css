@@ -4,6 +4,15 @@
   text-align: left;
 }
 
+.reveal .title {
+  background: #fff8f1d0;
+}
+
+/* --- Slide Styles ----------------------------------------------------- */
+
+.reveal .lightbg { background: #fff8f1d0; }
+.reveal .decentlightbg { background: #fff8f130; }
+
 /* --- Utilities -------------------------------------------------------- */
 
 .m-0 {
