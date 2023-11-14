@@ -14,6 +14,57 @@
 .reveal .lightbg { background: #fff8f1d0; }
 .reveal .decentlightbg { background: #fff8f130; }
 
+/* --- Layout Helper  --------------------------------------------------- */
+
+.small p,
+.small li,
+.small code,
+.small TH,
+p.small,
+div.small,
+span.small,
+TABLE.small {
+  font-size: 94% !important;
+}
+
+.x-small p,
+.x-small li,
+.x-small code,
+.x-small TH,
+p.x-small,
+div.x-small,
+span.x-small,
+TABLE.x-small {
+  font-size: 86% !important;
+}
+
+.reveal .x-small TH,
+.reveal .x-small TD,
+.x-small TD P {
+  padding: 0.1em 0.25em;
+  margin: 8px 0;
+}
+
+.xx-small p,
+.xx-small li,
+.xx-small code,
+.xx-small TABLE,
+.xx-small TH,
+p.xx-small,
+div.xx-small,
+span.xx-small {
+  font-size: 78% !important;
+}
+
+.small LI P {
+  margin: 12px 0;
+}
+
+.x-small LI P,
+.xx-small LI P {
+  margin: 6px 0;
+}
+
 /* --- Utilities -------------------------------------------------------- */
 
 .m-0 {
@@ -404,55 +455,4 @@
 
 .ps-5 {
   padding-left: 3rem !important;
-}
-
-/* --- Layout Helper  --------------------------------------------------- */
-
-.small p,
-.small li,
-.small code,
-.small TH,
-p.small,
-div.small,
-span.small,
-TABLE.small {
-  font-size: 94% !important;
-}
-
-.x-small p,
-.x-small li,
-.x-small code,
-.x-small TH,
-p.x-small,
-div.x-small,
-span.x-small,
-TABLE.x-small {
-  font-size: 86% !important;
-}
-
-.reveal .x-small TH,
-.reveal .x-small TD,
-.x-small TD P {
-  padding: 0.1em 0.25em;
-  margin: 8px 0;
-}
-
-.xx-small p,
-.xx-small li,
-.xx-small code,
-.xx-small TABLE,
-.xx-small TH,
-p.xx-small,
-div.xx-small,
-span.xx-small {
-  font-size: 78% !important;
-}
-
-.small LI P {
-  margin: 12px 0;
-}
-
-.x-small LI P,
-.xx-small LI P {
-  margin: 6px 0;
 }
