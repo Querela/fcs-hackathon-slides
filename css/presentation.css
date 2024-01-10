@@ -154,6 +154,21 @@ div.refs li:hover p a {
   color: blue;
 }
 
+/* --- Colors ----------------------------------------------------------- */
+
+.lightgrey {
+  color: lightgray;
+}
+.darkgrey {
+  color: darkgrey;
+}
+.lightblue {
+  color: lightblue;
+}
+.blue {
+  color: blue;
+}
+
 /* --- Utilities -------------------------------------------------------- */
 
 .m-0 {

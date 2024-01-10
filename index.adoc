@@ -4,7 +4,9 @@
 :revealjsdir: reveal.js
 :revealjs_theme: white
 :revealjs_width: 1408
-:revealjs_height: 792
+:revealjs_height: 892
+:revealjs_slideNumber: h.v
+// :revealjs_hash: true
 :source-highlighter: highlight.js
 :imagesdir: images
 :customcss: css/presentation.css
@@ -34,7 +36,9 @@ include::fcs-wegweiser.adoc[leveloffset=+1]
 
 <<<
 
-== Technische Grundlagen
+include::technische-grundlagen.adoc[leveloffset=+1]
+
+<<<
 
 == Referenzimplementierungen
 
@@ -49,3 +53,19 @@ include::fcs-wegweiser.adoc[leveloffset=+1]
 <<<
 
 include::fcs-ressourcen.adoc[leveloffset=+1]
+
+
+[pass]
+++++
+<script>
+// remove hidden sections/slides;
+// add role "[.hidden]" to a slide to remove it from the presentation
+var sections = document.getElementsByTagName('section');
+for (var i = sections.length-1; i > -1; --i) {
+    console.log(sections[i].classList);
+    if (sections[i].classList.contains("hidden")) {
+        sections[i].remove();
+    }
+}
+</script>
+++++
