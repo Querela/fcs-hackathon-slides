@@ -1,3 +1,4 @@
+[background-image="textplus-fcs.002.png",background-opacity="0.5"]
 = Technische Grundlagen
 
 [.notes]

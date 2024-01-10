@@ -1,3 +1,4 @@
+[background-image="textplus-fcs.002.png",background-opacity="0.5"]
 = Begrüßung und Überblick
 
 == Agenda Donnerstag (16.11.2023)

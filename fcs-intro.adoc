@@ -1,3 +1,4 @@
+[background-image="textplus-fcs.002.png",background-opacity="0.5"]
 = Einführung in die Föderierte Inhaltssuche (FCS)
 // :background-video: https://drive.google.com/file/d/1VpeJNY-sAseHmW-yDVDRFjrhzdK3n44K
 // :background-video-loop: true

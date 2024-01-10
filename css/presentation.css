@@ -14,6 +14,30 @@
   padding: 3rem;
 }
 
+/* for slides with background image, make colored box for title */
+.reveal section.stack.present section:first-of-type[data-background-image] h2,
+.reveal section.stack.present section:first-of-type[data-background-image] aside.notes {
+  background: #fff8f1d0;
+  padding: 3rem;
+}
+
+/* and show notes (which should contain the content */
+.reveal section.stack.present section:first-of-type aside.notes {
+  display: block;
+  padding: 1rem;
+  text-align: left;
+  font-style: italic;
+}
+
+.reveal section.stack.present section:first-of-type aside.notes ul {
+  list-style-type: none;
+}
+
+.reveal pre code {
+  /* max-height: 130vh; */
+  max-height: 45rem;
+}
+
 /* --- Slide Styles ----------------------------------------------------- */
 
 .reveal .lightbg {
@@ -27,7 +51,8 @@
 /* --- Layout Helper  --------------------------------------------------- */
 
 .reveal .paragraph.left,
-.reveal .left .paragraph {
+.reveal .left .paragraph,
+.reveal .left > .content > .ulist {
   text-align: left;
 }
 
@@ -214,6 +239,10 @@ div.refs li:hover p a {
 }
 
 /* --- Utilities -------------------------------------------------------- */
+
+.font-italic {
+  font-style: italic;
+}
 
 .m-0 {
   margin: 0 !important;
