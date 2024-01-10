@@ -743,9 +743,16 @@ endif::[]
 
 // TODO: image
 
-* FCS = Beschreibung von Capabilities, erweiterbaren Ergebnisformaten und Operationen
+[.img-bg-pa-r0-w50]
+image::FCS_architecture_de.png[FCS Architektur]
+
+[.pt-5]
+* FCS = Beschreibung von Capabilities, +
+erweiterbaren Ergebnisformaten +
+und Operationen
 +
-→ Nutzung von SRU/CQL und Erweiterungen nach SRU
+→ Nutzung von SRU/CQL und +
+Erweiterungen nach SRU
 * Interface Spezifikation = Formate und Transportprotokoll
 
 ** Endpoint = Brücke zwischen Client (FCS Formaten) und lokaler Suchmaschine

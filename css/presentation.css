@@ -180,6 +180,15 @@ div.refs li:hover p a {
   color: blue;
 }
 
+/* --- Background Images ------------------------------------------------ */
+
+.img-bg-pa-r0-w50 {
+  position: absolute;
+  right: 0;
+  width: 50%;
+}
+
+
 /* --- Colors ----------------------------------------------------------- */
 
 .lightgrey {
