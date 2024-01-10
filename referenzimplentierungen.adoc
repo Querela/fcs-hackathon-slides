@@ -284,7 +284,7 @@ endif::[]
 
 // TODO: Hintergrundbild/Beispielcode
 
-[.img-bg-pa-r-30-w75.op-50,source,xml]
+[.img-bg-pa-r-30-w75.op-50,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint-config xmlns="http://www.clarin.eu/sru-server/1.0/">
