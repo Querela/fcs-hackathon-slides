@@ -757,3 +757,378 @@ Erweiterungen nach SRU
 ** Client = Anwenderschnittstelle, Query-Eingabe und Ergebnispräsentation
 
 * Discovery und Search Mechanismus
+
+[.left]
+== FCS – Discovery
+
+* SRU Explain
+** _Hilfe und Informationen für Client zu Zugriff, Anfrage und Verarbeitung von Ergebnissen vom Server_
+
+* Informationen über Endpunkt
++
+--
+** Capabilities: Basic Search, Advanced Search?
+** Ressourcen für Suche
+--
++
+→ Endpoint Description (XML) über _explain SRU Operation_
+
+[.notes]
+--
+* FCS 2.0 §3 CLARIN-FCS to SRU/CQL binding
+--
+
+
+== FCS – Endpoint Description
+
+* XML nach Schema https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/attachments/Endpoint-Description.xsd[Endpoint-Description.xsd] 
+* *`<ed:EndpointDescription>`*
+** [.blue]`@version` mit “`2`”
+** [.blue]`<ed:Capabilities>` (1)
+** [.blue]`<ed:SupportedDataViews>` (1)
+** [.blue]`<ed:SupportedLayers>` (1) (wenn Advanced Search Capability)
+** [.blue]`<ed:Resources>` (1)
+
+
+ifdef::backend-revealjs[]
+== FCS – Endpoint Description (2)
+endif::[]
+
+* *`<ed:Capability>`*
+** Inhalt: Capability Identifier, URI
+*** `\http://clarin.eu/fcs/capability/basic-search`
+*** `\http://clarin.eu/fcs/capability/advanced-search`
+
+
+ifdef::backend-revealjs[]
+== FCS – Endpoint Description (3)
+endif::[]
+
+* *`<ed:SupportedDataView>`*
+** Inhalt: MIME-Typ, z.B. `application/x-clarin-fcs-hits+xml`
+** [.blue]`@id` → Referenzierung in `<ed:Resource>`
+** [.blue]`@delivery-policy`: `send-by-default` / `need-to-request`
+** keine Duplikate (nach MIME-Type) erlaubt
+
+
+ifdef::backend-revealjs[]
+== FCS – Endpoint Description (4)
+endif::[]
+
+* *`<ed:SupportedLayer>`*
+** (nur bei Advanced Search)
+** Inhalt: Layer Identifier, z.B. “`orth`”
+** [.blue]`@id` → Referenzierung in `<ed:Resource>`
+** [.blue]`@result-id` → Referenzierung des Layers im Advanced Data View
+** [.blue]`@qualifier` → Kennzeichner in FCS-QL Search Term für den Layer
+** [.blue]`@alt-value-info`,[.blue]` @alt-value-info-uri`: kurze Beschreibung des Layer, z.B. für Tagset, + URL mit weiteren Informationen
+** keine Duplikate anhand `@result-id` MIME-Typ erlaubt
+
+
+ifdef::backend-revealjs[]
+[.small]
+== FCS – Endpoint Description (5)
+endif::[]
+
+* *`<ed:Resource>`*
+** [.blue]`@pid`: Persistent Identifier (z.B. `MdSelfLink` von CMDI Record)
+** [.blue]`<ed:Title>` (1+) mit `@xml:lang`, keine Duplikate, English erforderlich
+** [.blue]`<ed:Description>` (0+) mit `@xml:lang`, English erforderlich,
+** sollte maximal 1 Satz sein
+** [.blue]`<ed:LandingPageURI>` (0/1) – Link zur Webseite der Ressource 
+** [.blue]`<ed:Languages>` (1) mit `<ed:Language>` mit Inhalt aus ISO 639-3
+** [.blue]`<ed:AvailableDataViews>` (1) mit `@ref` = Liste von IDs der `<ed:SupportedDataView>` Elemente, z.B. “`hits adv`”
+** [.blue]`<ed:AvailableLayers>` (1) (wenn Advanced Search Capability), mit `@ref` = Liste von IDs der `<ed:SupportedLayer>` Elemente, z.B. “`word lemma pos`”
+** [.blue]`<ed:Resources>` (0/1) für Teil-Ressourcen
+** für `<ed:AvailableDataViews>` und `<ed:AvailableLayers>` sollten Unterressourcen dieselben Listen unterstützen, eine erneute Deklaration ist erforderlich
+
+
+ifdef::backend-revealjs[]
+[.small]
+== FCS – Endpoint Description (Examples)
+endif::[]
+
+.Minimale Endpoint Description für BASIC Search
+[source,xml]
+----
+<ed:EndpointDescription xmlns:ed="http://clarin.eu/fcs/endpoint-description" version="2">
+  <ed:Capabilities>
+    <ed:Capability>http://clarin.eu/fcs/capability/basic-search</ed:Capability>
+  </ed:Capabilities>
+  <ed:SupportedDataViews>
+    <ed:SupportedDataView id="hits" delivery-policy="send-by-default">application/x-clarin-fcs-hits+xml</ed:SupportedDataView>
+  </ed:SupportedDataViews>
+  <ed:Resources>
+    <!-- just one top-level resource at the Endpoint -->
+    <ed:Resource pid="http://hdl.handle.net/4711/0815">
+      <ed:Title xml:lang="de">Goethe Korpus</ed:Title>
+      <ed:Title xml:lang="en">Goethe corpus</ed:Title>
+      <ed:Description xml:lang="de">Das Goethe-Korpus des IDS Mannheim.</ed:Description>
+      <ed:Description xml:lang="en">The Goethe corpus of IDS Mannheim.</ed:Description>
+      <ed:LandingPageURI>http://repos.example.org/corpus1.html</ed:LandingPageURI>
+      <ed:Languages>
+        <ed:Language>deu</ed:Language>
+      </ed:Languages>
+      <ed:AvailableDataViews ref="hits" />
+    </ed:Resource>
+  </ed:Resources>
+</ed:EndpointDescription>
+----
+
+
+ifdef::backend-revealjs[]
+[.small]
+== FCS – Endpoint Description (Examples 2)
+endif::[]
+
+.Endpoint Description mit CMDI Data View und Unter-Ressourcen
+[source,xml,highlight="7,30,31..43"]
+----
+<ed:EndpointDescription xmlns:ed="http://clarin.eu/fcs/endpoint-description" version="2">
+  <ed:Capabilities>
+    <ed:Capability>http://clarin.eu/fcs/capability/basic-search</ed:Capability>
+  </ed:Capabilities>
+  <ed:SupportedDataViews>
+    <ed:SupportedDataView id="hits" delivery-policy="send-by-default">application/x-clarin-fcs-hits+xml</ed:SupportedDataView>
+    <ed:SupportedDataView id="cmdi" delivery-policy="need-to-request">application/x-cmdi+xml</ed:SupportedDataView>
+  </ed:SupportedDataViews>
+  <ed:Resources>
+    <!-- top-level resource 1 -->
+    <ed:Resource pid="http://hdl.handle.net/4711/0815">
+      <ed:Title xml:lang="de">Goethe Korpus</ed:Title>
+      <ed:Title xml:lang="en">Goethe corpus</ed:Title>
+      <ed:Description xml:lang="de">Das Goethe-Korpus des IDS Mannheim.</ed:Description>
+      <ed:Description xml:lang="en">The Goethe corpus of IDS Mannheim.</ed:Description>
+      <ed:LandingPageURI>http://repos.example.org/corpus1.html</ed:LandingPageURI>
+      <ed:Languages>
+        <ed:Language>deu</ed:Language>
+      </ed:Languages>
+      <ed:AvailableDataViews ref="hits" />
+    </ed:Resource>
+    <!-- top-level resource 2 -->
+    <ed:Resource pid="http://hdl.handle.net/4711/0816">
+      <ed:Title xml:lang="de">Zeitungskorpus des Mannheimer Morgen</ed:Title>
+      <ed:Title xml:lang="en">Mannheimer Morgen newspaper corpus</ed:Title>
+      <ed:LandingPageURI>http://repos.example.org/corpus2.html</ed:LandingPageURI>
+      <ed:Languages>
+        <ed:Language>deu</ed:Language>
+      </ed:Languages>
+      <ed:AvailableDataViews ref="hits cmdi" />
+      <ed:Resources>
+        <!-- sub-resource 1 of top-level resource 2 -->
+        <ed:Resource pid="http://hdl.handle.net/4711/0816-1">
+          <ed:Title xml:lang="de">Zeitungskorpus des Mannheimer Morgen (vor 1990)</ed:Title>
+          <ed:Title xml:lang="en">Mannheimer Morgen newspaper corpus (before 1990)</ed:Title>
+          <ed:LandingPageURI>http://repos.example.org/corpus2.html#sub1</ed:LandingPageURI>
+          <ed:Languages>
+            <ed:Language>deu</ed:Language>
+          </ed:Languages>
+          <ed:AvailableDataViews ref="hits cmdi" />
+        </ed:Resource>
+        <!-- sub-resource 2 of top-level resource 2 ... -->
+      </ed:Resources>
+    </ed:Resource>
+  </ed:Resources>
+</ed:EndpointDescription>
+----
+
+
+ifdef::backend-revealjs[]
+[.small]
+== FCS – Endpoint Description (Examples 3)
+endif::[]
+
+.Endpoint Description mit ADVANCED Search Capability Unterstützung
+[source,xml,highlight="4,8,10..21,34,35"]
+----
+<ed:EndpointDescription xmlns:ed="http://clarin.eu/fcs/endpoint-description" version="2">
+  <ed:Capabilities>
+    <ed:Capability>http://clarin.eu/fcs/capability/basic-search</ed:Capability>
+    <ed:Capability>http://clarin.eu/fcs/capability/advanced-search</ed:Capability>
+  </ed:Capabilities>
+  <ed:SupportedDataViews>
+    <ed:SupportedDataView id="hits" delivery-policy="send-by-default">application/x-clarin-fcs-hits+xml</ed:SupportedDataView>
+    <ed:SupportedDataView id="adv" delivery-policy="send-by-default">application/x-clarin-fcs-adv+xml</ed:SupportedDataView>
+  </ed:SupportedDataViews>
+  <ed:SupportedLayers>
+    <ed:SupportedLayer id="word" result-id="http://spraakbanken.gu.se/ns/fcs/layer/word">text</ed:SupportedLayer>
+    <ed:SupportedLayer id="orth" result-id="http://endpoint.example.org/Layers/orth" type="empty">orth</ed:SupportedLayer>
+    <ed:SupportedLayer id="lemma" result-id="http://spraakbanken.gu.se/ns/fcs/layer/lemma">lemma</ed:SupportedLayer>
+    <ed:SupportedLayer id="pos" result-id="http://spraakbanken.gu.se/ns/fcs/layer/pos"
+                       alt-value-info="SUC tagset"
+                       alt-value-info-uri="https://spraakbanken.gu.se/parole/Docs/SUC2.0-manual.pdf"
+                       qualifier="suc">pos</ed:SupportedLayer>
+    <ed:SupportedLayer id="pos2" result-id="http://spraakbanken.gu.se/ns/fcs/layer/pos2"
+                       alt-value-info="2nd tagset"
+                       qualifier="t2">pos</ed:SupportedLayer>
+  </ed:SupportedLayers>
+
+  <ed:Resources>
+    <!-- just one top-level resource at the Endpoint -->
+    <ed:Resource pid="hdl:10794/suc">
+      <ed:Title xml:lang="sv">SUC-korpusen</ed:Title>
+      <ed:Title xml:lang="en">The SUC corpus</ed:Title>
+      <ed:Description xml:lang="sv">Stockholm-Umeå-korpusen hos Språkbanken.</ed:Description>
+      <ed:Description xml:lang="en">The Stockholm-Umeå corpus at Språkbanken.</ed:Description>
+      <ed:LandingPageURI>https://spraakbanken.gu.se/resurser/suc</ed:LandingPageURI>
+      <ed:Languages>
+        <ed:Language>swe</ed:Language>
+      </ed:Languages>
+      <ed:AvailableDataViews ref="hits adv" />
+      <ed:AvailableLayers ref="word lemma pos pos2" />
+    </ed:Resource>
+  </ed:Resources>
+</ed:EndpointDescription>
+----
+
+
+== FCS – Search
+
+* SRU SearchRetreive
+* Suche
+
+** *Basic Search* mit CQL
+** *Advanced Search* mit FCS-QL
+
+* Suchergebnisse werden im _Resource (Fragment)_ und _Data View_ Formaten serialisiert
+* Details bei Implementierung → TODO Folien link
+
+
+== FCS – SRU Extension Parameter
+
+* *`x-fcs-endpoint-description`* (explain)
+
+** “`true`” - `<sru:extraResponseData>` der Explain Antwort enthält das Endpoint Description Dokument
+
+* *`x-fcs-context`* (searchRetrieve)
+
+** Komma-separierte Liste von PIDs
+** Einschränkung der Suche auf Ressourcen mit diesen PIDs
+
+* *`x-fcs-dataviews`* (searchRetrieve)
+
+** Komma-separierte Liste von Data View Identifiern
+** Endpunkte sollten diese _``need-to-request``_ Data Views mit ausliefern
+
+* *`x-fcs-rewrites-allowed`* (searchRetrieve)
+
+** “`true`” - Endpunkt kann Query vereinfachen für höheren Recall
+
+[.notes]
+--
+* https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/normative-appendix.adoc#list-of-extra-request-parameters
+--
+
+
+== FCS – Diagnostics
+
+* Ergänzungen zu den SRU Diagnostics → TODO Link zu Folie
+* Präfix: `\http://clarin.eu/fcs/diagnostic/`
+* Bezug auf die Extra-Request-Parameter
+
+
+ifdef::backend-revealjs[]
+== FCS – Diagnostics (Tabelle)
+endif::[]
+
+[.xx-small%header,cols="3m,4,1"] 
+|===
+|Identifier URI
+|Description
+|Impact
+
+|{set:cellbgcolor:#b16c2b88}\http://clarin.eu/fcs/diagnostic/1
+|Persistent identifier passed by the Client for restricting the search is invalid.
+|non-fatal
+
+|{set:cellbgcolor}\http://clarin.eu/fcs/diagnostic/2
+|Resource set too large. Query context automatically adjusted.
+|non-fatal
+
+|\http://clarin.eu/fcs/diagnostic/3
+|Resource set too large. Cannot perform Query.
+|fatal
+
+|{set:cellbgcolor:#b16c2b88}\http://clarin.eu/fcs/diagnostic/4
+|Requested Data View not valid for this resource.
+|non-fatal
+
+|{set:cellbgcolor}\http://clarin.eu/fcs/diagnostic/10
+|General query syntax error.
+|fatal
+
+|{set:cellbgcolor:#b16c2b88}\http://clarin.eu/fcs/diagnostic/11
+|Query too complex. Cannot perform Query.
+|fatal
+
+|{set:cellbgcolor}\http://clarin.eu/fcs/diagnostic/12
+|Query was rewritten.
+|non-fatal
+
+|{set:cellbgcolor:#b16c2b88}\http://clarin.eu/fcs/diagnostic/14
+|General processing hint.
+|non-fatal
+|===
+
+[.notes]
+--
+* https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/normative-appendix.adoc#list-of-diagnostics
+--
+
+
+== Versionen und Rückwärtskompatibilität
+
+* “Clients MUST be compatible to CLARIN-FCS 1.0” (https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/interface-specification.adoc#backwards-compatibility[Quelle])
+
+** damit Implementierung von SRU 1.2
+** Beschränkung auf Basic Search Capability
+** Verarbeitung von Legacy XML Namespaces (SRU Response, Diagnostics)
+
+* *Heuristik zur Versionserkennung* (von Endpunkten)
+
+** Client: `Explain`-Request ohne `version` und `operation` Parameter
+** Endpoint: SRU Response `<sru:explainResponse>`/`<sru:version>`
+
+* Versionen
+
+** FCS 2.0 ↔ SRU 2.0
+** FCS 1.0 ↔ SRU 1.2 (SRU 1.1)
+
+[.notes]
+--
+* https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/interface-specification.adoc#versioning-and-extensions
+--
+
+
+== Hinweise zu FCS SRU Aggregator
+
+* momentan keine Unterstützung von nur FCS 2.0 Endpunkten
++
+--
+** aus Kompatibilitätsgründen Support von _Legacy FCS_ und _FCS 1.0_
+** Annahme, dass Endpunkte bei _FCS 2.0_ auch frühere FCS Versionen unterstützen… [.lightgrey]+pass:q[_(mit CLARIN Bibliotheken kein Problem)_]+
+--
++
+→ _FCS 2.0 only_ Endpunkte erhalten somit trotzdem _FCS 1.0 (SRU 1.2)_ Anfragen!
+
+* Aggregator sendet `searchRetrieve`-Anfragen mit nur jeweils einer Ressourcen-PID im `x-fcs-context` Parameter
+
+** d.h. Suchen über `N` Ressourcen eines Endpunktes → `N` separate Suchanfragen
+
+
+[.hidden]
+== Hinweis zu Scan-Operation
+
+* Nutzung _nur_ in Legacy FCS,
++
+ursprünglich zur Auflistung der verfügbaren Ressourcen
+
+* Reserviert für mögliche zukünftige Nutzung
+* Bitte ignorieren!
+
+[.notes]
+--
+* https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/fcs-to-sru-cql-binding.adoc#operation-scan
+* http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part6-scan/searchRetrieve-v1.0-os-part6-scan.html
+--
+
