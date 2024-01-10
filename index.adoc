@@ -44,7 +44,9 @@ include::referenzimplentierungen.adoc[leveloffset=+1]
 
 <<<
 
-== Resources und Data Views
+include::ressourcen-dataviews.adoc[leveloffset=+1]
+
+<<<
 
 == Query Translation
 

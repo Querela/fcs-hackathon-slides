@@ -1,0 +1,25 @@
+= Resources und Data Views
+
+[.notes]
+--
+* Endpoint Capabilities, BASIC/ADVANCED Search, FCS-QL
+* Resource, Resource Fragment, Data View (Hits, Advanced)
+* Ergebnis-Serialisierung, Anfragesprachen
+--
+
+
+[.left]
+== Endpoint Description – Capabilities
+
+*\http://clarin.eu/fcs/capability/basic-search*
+
+* Erforderlich
+* Query: Volltextsuche (Basic) mit Minimal-CQL (AND/OR)
+* DataView: HITS
+
+[.mt-5]
+*\http://clarin.eu/fcs/capability/advanced-search*
+
+* Optional
+* Query: FCS-QL (Strukturierte Suche über Annotationslayer)
+* DataView: HITS und Advanced
