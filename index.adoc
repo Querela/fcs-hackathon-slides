@@ -40,7 +40,9 @@ include::technische-grundlagen.adoc[leveloffset=+1]
 
 <<<
 
-== Referenzimplementierungen
+include::referenzimplentierungen.adoc[leveloffset=+1]
+
+<<<
 
 == Resources und Data Views
 
@@ -54,6 +56,12 @@ include::technische-grundlagen.adoc[leveloffset=+1]
 
 include::fcs-ressourcen.adoc[leveloffset=+1]
 
+
+// nur zur schnelleren Entwickeln, sollte später entfernt werden
+[pass]
+++++
+<script src="./live.js"></script>
+++++
 
 [pass]
 ++++
