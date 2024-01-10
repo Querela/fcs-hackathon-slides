@@ -413,6 +413,9 @@ endif::[]
 
 == searchRetrieve 2.0 – Pagination (Cont.)
 
+[.img-bg-pa-r-30-w75.op-50]
+image::fcs-sru-results-xml.png[Response XML für CQL Suche nach "cat"]
+
 * https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat[pass:q[spraakbanken.gu.se/…/sru?*query=cat*]]
 +
 → 9220 Ergebnisse, weitere ab 251
@@ -432,9 +435,6 @@ endif::[]
 * https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&maximumRecords=100000[pass:q[spraakbanken.gu.se/…/sru?query=cat&*maximumRecords=100000*]]
 +
 → Limitierung auf 1000 Records
-
-// TODO: Hintergrundbild von Response ...
-// https://docs.google.com/presentation/d/16X5b0eUYjSupwuhdJZevgLNvzWQ6U6-YdgGOtwKwqDI/edit#slide=id.g29a7726d2b0_4_178
 
 
 == searchRetrieve 2.0 – Serialization
@@ -740,8 +740,6 @@ endif::[]
 
 
 == FCS Interface Specification
-
-// TODO: image
 
 [.img-bg-pa-r0-w50]
 image::FCS_architecture_de.png[FCS Architektur]

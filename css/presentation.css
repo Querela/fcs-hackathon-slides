@@ -188,6 +188,15 @@ div.refs li:hover p a {
   width: 50%;
 }
 
+.img-bg-pa-r-30-w75 {
+  position: absolute;
+  right: -30%;
+  width: 75%;
+}
+
+.op-50 {
+  opacity: 50%;
+}
 
 /* --- Colors ----------------------------------------------------------- */
 
