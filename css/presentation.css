@@ -71,12 +71,38 @@ span.xx-small {
   font-size: 78% !important;
 }
 
+.reveal .xx-small TH,
+.reveal .xx-small TD,
+.xx-small TD P {
+  padding: 0.1em 0.25em;
+  margin: 8px 0;
+}
+
+.xxx-small p,
+.xxx-small li,
+.xxx-small code,
+.xxx-small TABLE,
+.xxx-small TH,
+p.xxx-small,
+div.xxx-small,
+span.xxx-small {
+  font-size: 50% !important;
+}
+
+.reveal .xxx-small TH,
+.reveal .xxx-small TD,
+.xxx-small TD P {
+  padding: 0.1em 0.25em;
+  margin: 0.1em 0;
+}
+
 .small LI P {
   margin: 12px 0;
 }
 
 .x-small LI P,
-.xx-small LI P {
+.xx-small LI P,
+.xxx-small LI P {
   margin: 6px 0;
 }
 
