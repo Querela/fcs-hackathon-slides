@@ -97,14 +97,16 @@ auch: Föderierte “Corpus Query Platform”
 |Daten-Updates
 |➕ Endpunkte können schnell reagieren
 |➖ schwierig, z.B. Entfernen von Ressourcen bei rechtlichen Problemen; Updates mit längeren Zeiten verbunden, falls überhaupt möglich
-|===
 
 ifdef::backend-revealjs[]
+|===
+
 == Vergleich FCS mit zentralem Index (2)
-endif::[]
 
 [%noheader,cols="h,3,3"]
 |===
+endif::[]
+
 |Globales Ranking
 |➖ sehr schwierig/unmöglich
 |➕ gut möglich (?), vermutlich implizite Annahme zu und Normalisierung von Daten für Indizierung

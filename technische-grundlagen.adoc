@@ -611,3 +611,144 @@ Prefix: `info:srw/diagnostic/1/`
 * https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/normative-appendix.adoc#list-of-diagnostics
 --
 
+
+ifdef::backend-revealjs[]
+[.columns]
+== SRU 2.0 – Diagnostics (Table)
+endif::[]
+
+[.column]
+--
+[.xxx-small,%noheader,cols="1,6,6"] 
+|===
+|{set:cellbgcolor:#b16c2b88}1
+|General system error
+|Debugging information (traceback)
+
+|{set:cellbgcolor}2
+2+|System temporarily unavailable
+
+|3
+2+|Authentication error
+
+|4
+2+|Unsupported operation
+
+|5
+|Unsupported version
+|Highest version supported
+
+|6
+|Unsupported parameter value
+|Name of parameter
+
+|7
+|Mandatory parameter not supplied
+|Name of missing parameter
+
+|8
+|Unsupported parameter
+|Name of the unsupported parameter
+
+|9
+2+|Unsupported combination of parameters
+
+|10
+2+|Query syntax error
+
+|23
+|Too many characters in term
+|Length of longest term
+
+|26
+|Non special character escaped in term
+|Character incorrectly escaped
+
+|35
+|Term contains only stopwords
+|Value
+
+|37
+|Unsupported boolean operator
+|Value
+
+|38
+|Too many boolean operators in query
+|Maximum number supported
+
+ifdef::backend-revealjs[]
+|===
+--
+[.column]
+--
+[.xxx-small,%noheader,cols="1,6,6"] 
+|===
+endif::[]
+
+|{set:cellbgcolor:#b16c2b88}47
+2+|Cannot *process* query; reason unknown
+
+|{set:cellbgcolor:#b16c2b88}48
+|Query feature unsupported
+|Feature
+
+|{set:cellbgcolor}60
+|Result set not created: too many matching records
+|Maximum number
+
+|61
+2+|First record position out of range
+
+|64
+2+|Record temporarily unavailable
+
+|65
+2+|Record does not exist
+
+|66
+|Unknown schema for retrieval
+|Schema URI or short name
+
+|67
+|Record not available in this schema
+|Schema URI or short name
+
+|68
+2+|Not authorized to send record
+
+|69
+2+|Not authorized to send record in this schema
+
+|70
+|Record too large to send
+|Maximum record size
+
+|71
+2+|Unsupported recordXMLEscaping value
+
+|80
+2+|Sort not supported
+
+|110
+2+|Stylesheets not supported
+
+|111
+|Unsupported stylesheet
+|URL of stylesheet
+|===
+--
+
+
+== FCS Interface Specification
+
+// TODO: image
+
+* FCS = Beschreibung von Capabilities, erweiterbaren Ergebnisformaten und Operationen
++
+→ Nutzung von SRU/CQL und Erweiterungen nach SRU
+* Interface Spezifikation = Formate und Transportprotokoll
+
+** Endpoint = Brücke zwischen Client (FCS Formaten) und lokaler Suchmaschine
+** Client = Anwenderschnittstelle, Query-Eingabe und Ergebnispräsentation
+
+* Discovery und Search Mechanismus
