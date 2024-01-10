@@ -409,27 +409,205 @@ endif::[]
 ** URI: “`info:srw/vocabulary/resultCountPrecision/1/…`”
 ** `exact` / `unknown` / `estimate` / `maximum` / `minimum` / `current`
 
+
+
 == searchRetrieve 2.0 – Pagination (Cont.)
 
-* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat[spraakbanken.gu.se/…/sru?query=cat]
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat[pass:q[spraakbanken.gu.se/…/sru?*query=cat*]]
 +
 → 9220 Ergebnisse, weitere ab 251
 
-* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&startRecord=300&maximumRecords=10[spraakbanken.gu.se/…/sru?query=cat&startRecord=300&maximumRecords=10]
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&startRecord=300&maximumRecords=10[pass:q[spraakbanken.gu.se/…/sru?query=cat&*startRecord=300*&*maximumRecords=10*]]
 +
 → weitere ab 310
 
-* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&startRecord=10000&maximumRecords=10[spraakbanken.gu.se/…/sru?query=cat&startRecord=10000&maximumRecords=10]
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&startRecord=10000&maximumRecords=10[pass:q[spraakbanken.gu.se/…/sru?query=cat&*startRecord=10000*&maximumRecords=10]]
 +
 → Fehler, da “out of range”
 
-* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=catsss[spraakbanken.gu.se/…/sru?query=catsss]
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=catsss[pass:q[spraakbanken.gu.se/…/sru?*query=catsss*]]
 +
 → keine Ergebnisse
 
-* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&maximumRecords=100000[spraakbanken.gu.se/…/sru?query=cat&maximumRecords=100000]
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&maximumRecords=100000[pass:q[spraakbanken.gu.se/…/sru?query=cat&*maximumRecords=100000*]]
 +
 → Limitierung auf 1000 Records
 
+// TODO: Hintergrundbild von Response ...
+// https://docs.google.com/presentation/d/16X5b0eUYjSupwuhdJZevgLNvzWQ6U6-YdgGOtwKwqDI/edit#slide=id.g29a7726d2b0_4_178
 
+
+== searchRetrieve 2.0 – Serialization
+
+* *`recordXMLEscaping`* (Parameter, SRU 2.0)
+
+** wenn Records als XML serialisiert werden, kann bei “`string`” der Records escaped werden (“`<`”, “`>`”, “`&`”); default ist “`xml`” als direkte Einbettung der Records in die Response, z.B. für Stylesheets
+
+* *`recordPacking`* (Parameter, SRU 2.0)
+
+** hatte in SRU 1.2 die Semantic von `recordXMLEscaping`
+** “`packed`” (default), Server soll Records mit angefragten Schema liefern; “`unpacked`”, Server kann Stelle der Anwendungsdaten in den Records selber bestimmen (?)
+
+// NOTE: hinweis, dass bei Java impl momentan noch problem
+
+
+ifdef::backend-revealjs[]
+== searchRetrieve 2.0 – Serialization (2)
+endif::[]
+
+* {empty}
++
+[.darkgrey]
+--
+*`httpAccept`* (Parameter, SRU 2.0)
+--
+
+** {empty}
++
+[.darkgrey]
+--
+Schema für Response, default ist “`application/sru+xml`”
+--
+
+* {empty}
++
+[.darkgrey]
+--
+*`responseType`* (Parameter)
+--
+
+** {empty}
++
+[.darkgrey]
+--
+Schema für Response (in Kombination mit `httpAccept`)
+--
+
+* *`recordSchema`* (Parameter)
+
+** Schema der Records in Response, z.B. “`http://clarin.eu/fcs/resource`”
+** Kürzel für Schema aus Explain-Response
+
+* *`records`* (Element)
+
+** enthält Records / Surrogate Diagnostics
+** nach http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#sruplusxml[default Schema] eine Liste von “`<record>`” Elementen
+
+[.notes]
+--
+* *`recordSchema`* mit `http://clarin.eu/fcs/resource` kann zum Multiplexen genommen werden, wenn mehrere SRU Funktionalitäten über einen Endpoint angeboten werden, z.B. auch DFG Viewer o.Ä.
+--
+
+
+ifdef::backend-revealjs[]
+== searchRetrieve 2.0 – Serialization (3)
+endif::[]
+
+* *`stylesheet`* (Parameter)
+
+** URL zu Stylesheet, zur Darstellung beim Nutzer
+
+** *`renderedBy`* (Parameter, SRU 2.0)
+
+** wo wird Stylesheet für Antwort gerendert
+** “`client`” (default), URL von _``stylesheet``_-Parameter wird einfach wiedergegeben → “thin client” (im Web Browser)
+** {empty}
++
+[.darkgrey]
+--
+“`server`”, Server soll default SRU Response mit Stylesheet transformieren (z.B. für _``httpAccept``_ mit HTML-Format)
+--
+
+
+ifdef::backend-revealjs[]
+== searchRetrieve 2.0 – Serialization (4)
+endif::[]
+
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&recordXMLEscaping=string[pass:q[spraakbanken.gu.se/…/sru?query=cat&*recordXMLEscaping=string*]]
++
+→ evtl. Serialisierungsfehler in Java-Bibliothek
+
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?operation=searchRetrieve&version=1.2&query=cat&version=1.2&recordPacking=string[pass:q[spraakbanken.gu.se/…/sru?*operation=searchRetrieve*&version=1.2&query=cat&*version=1.2*&*recordPacking=string*]]
++
+(FCS 1.0, SRU 1.2, wie _``recordXMLEscaping``_)
+
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat&recordPacking=unpacked[pass:q[spraakbanken.gu.se/…/sru?query=cat&*recordPacking=unpacked*]]
++
+→ keine Änderung hier bemerkbar
+
+* …
+
+
+== searchRetrieve 2.0 – Nicht supportete Parameter
+
+* Sortierung (_``sortKeys``_) und Facettierung nicht supported
+
+
+== SRU 2.0 – Extensions
+
+* Erweiterungen möglich in
+
+** Anfrage über *Extension Parameter*
+** (beginnend mit “`x-`” und Namespace-Identifier, z.B. “`x-fcs-`”)
+
+* Antwort im *“`<extraResponseData>`” Element*
+* Antwort mit `extraResponseData`, _nur_ wenn in Anfrage mit entsprechendem Parameter angefragt, nie freiwillig
+
+** Server kann die Anfrage aber ignorieren, keine Verpflichtung
+
+* unbekannte Extension-Parameter sind zu ignorieren
+
+[.notes]
+--
+* http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#Extensions
+--
+
+
+== SRU 2.0 – Rückwärtskompatibilität
+
+* Parameter “`operation`” und “`version`” von SRU 1.1/SRU 1.2 entfernt → Annahme, pro Version eigener Endpunkt 
+* Heuristik
+
+** `searchRetrieve` = `query` oder `queryType` Parameter
+** `scan` = `scanClause` Parameter
+** `explain`
+
+* Interoperabilität mit älteren Versionen:
+
+** Nutzung von `operation`/`version` → SRU < 2.0
+** Achtung bei Parametern mit veränderter Semantik
++
+insbesondere `recordPacking`
+
+[.notes]
+--
+* http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162498
+--
+
+
+== SRU 2.0 – Diagnostics
+
+* “Fehlerbehandlung”
+* Unterscheidung in (non-)fatal, (non-)surrogate → TODO add ref
+* Schema: `info:srw/schema/1/diagnostics-v1.1`
++
+Prefix: `info:srw/diagnostic/1/`
+
+** `uri` (ID), `details` (Zusatzinfos, abhängig von Diagnostic), message
+
+* Infos:
+
+** Allgemeine Informationen und Hinweise (https://www.loc.gov/standards/sru/diagnostics/[LOC], http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162462[OASIS SRU 2.0])
+** Liste von Diagnostics (https://www.loc.gov/standards/sru/diagnostics/diagnosticsList.html[LOC], http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162491[OASIS SRU 2.0]) 
+
+* Kategorien: General (1-9), CQL (10-49), Result Sets (50-60), Records (61-74), Sorting (80-96), Explain (100-102), Stylesheets (110-111), Scan (120-121)
+* keine Begrenzung nur auf diese Liste, eigene Diagnostics möglich
+
+
+[.notes]
+--
+* http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162462
+* http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#diagnosticsList
+* https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/normative-appendix.adoc#list-of-diagnostics
+--
 
