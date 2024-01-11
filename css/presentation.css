@@ -219,6 +219,19 @@ div.refs li:hover p a {
 .blue {
   color: blue;
 }
+.green {
+  color: green;
+}
+
+/* --- Blocks ----------------------------------------------------------- */
+
+.block-border-left-dashed {
+  border-left-color: black;
+  border-left-width: 1px;
+  border-left-style: dashed;
+  padding-left: 1ex;
+}
+
 
 /* --- Utilities -------------------------------------------------------- */
 
@@ -228,6 +241,10 @@ div.refs li:hover p a {
 
 .position-absolute {
   position: absolute;
+}
+
+.bottom-0 {
+  bottom: 0;
 }
 
 .right-0 {

@@ -12,13 +12,14 @@ ifdef::backend-revealjs[]
 // :highlightjsdir:
 // https://github.com/asciidoctor/asciidoctor-reveal.js/blob/cbe2ac7f72877050ce15ee4a38fd54ca91590a78/lib/asciidoctor-revealjs/highlightjs.rb#L62
 :highlightjs-theme: reveal.js/plugin/highlight/magula.css
+:highlightjs-languages: xml,python,java,isbl,csharp,wren,x86asm
 endif::[]
 :imagesdir: images
 :customcss: css/presentation.css
 :title-slide-background-image: textplus-fcs.002.png
 :title-slide-background-opacity: 0.5
 :toclevels: 1
-:icons:
+:icons: font
 
 // images/textplus-fcs.002.png
 
@@ -53,7 +54,9 @@ include::ressourcen-dataviews.adoc[leveloffset=+1]
 
 <<<
 
-== Query Translation
+include::query-translation.adoc[leveloffset=+1]
+
+<<<
 
 == Endpunkt-Entwicklung
 

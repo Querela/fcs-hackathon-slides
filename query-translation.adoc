@@ -1,0 +1,10 @@
+[background-image="textplus-fcs.002.png",background-opacity="0.5"]
+== Query Translation
+
+[.notes]
+--
+* Anfragesprachen, Visualisierung
+* FCS-QL Details
+* Query Mapping
+--
+

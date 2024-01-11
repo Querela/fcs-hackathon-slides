@@ -48,7 +48,7 @@ endif::[]
 [.left]
 == BASIC Search
 
-[.position-absolute.right--30.width-50.opacity-50,sql]
+[.position-absolute.right--30.width-50.opacity-50,x86asm]
 ----
 cat
 "cat"
@@ -67,8 +67,442 @@ cat AND (mouse OR "lazy dog")
 ** können Boolean-Operatoren (`AND`/`OR`) und Sub-Queries unterstützen
 ** bei Fehlern mit entsprechender Diagnostic abbrechen
 ** Endpunkte entscheiden selber, worauf gesucht wird
-** (Text, Normalisierung o.Ä.)
++
+(Text, Normalisierung o.Ä.)
 
 * Ergebnisse serialisiert im *Generic Hits (HITS) Data View*
 
 *``\http://clarin.eu/fcs/capability/basic-search``*
+
+
+[.left]
+== ADVANCED Search
+
+[.position-absolute.right--30.width-50.opacity-50,x86asm]
+----
+"walking"
+[token = "walking"]
+"Dog" /c
+[word = "Dog" /c]
+[pos = "NOUN"]
+[pos != "NOUN"]
+[lemma = "walk"]
+"blaue|grüne" [pos = "NOUN"]
+"dogs" []{3,} "cats" within s
+[z:pos = "ADJ"]
+[z:pos = "ADJ" & q:pos = "ADJ"]
+----
+
+* Optional
+* Strukturierte Suche in annotierten Daten,
++
+repräsentiert in Annotationslayern
++
+→ Anfragesprache *FCS-QL*
+
+** Anfragen können verschieden Annotationslayer verknüpfen
+** Endpunkte sollten möglichst so viele Annotationslayer unterstützen wie möglich
+
+* Ergebnisse serialisiert in *Advanced (ADV) Data View* und *Generic Hits (HITS) Data View*
+
+*``\http://clarin.eu/fcs/capability/advanced-search``*
+
+
+== FCS-QL
+
+* *Annotationslayer*, diese enthalten Annotationen eines Types (z.B. Text, POS-Tags, …)
+* Query erlaubt Kombination dieser Layer bei Anfrage
+* Jeder Layer ist *segmentiert* → Suche nach einzelnem Lemma
+
+** keine Vorgabe, wie Segmentierung stattfinden soll
+** _Annahme, dass Segmentierung über Layer konsistent (für Darstellung im Advanced Data View)_
+
+
+== FCS-QL – Hinweise
+
+* Endpunkte müssen FCS-QL komplett parsen können!
+* Anfragen mit nicht unterstützten Operatoren oder Layern?
+
+** Fehler mit Diagnostics erzeugen, oder
+** Umschreiben von Queries, wenn durch “`x-fcs-rewrites-allowed`” erlaubt
+
+* Suchen sind _Case Sensitive_ (im Query konfigurierbar)
+* Suchen sollten auf Layern stattfinden, wo es Sinn macht,
++
+z.B. bei Vorhandensein mehrerer Text- oder POS-Layer
+
+
+== FCS-QL – Layertypen
+
+// ._Advanced Search_ Layer types with description and examples
+[.x-small%header,cols="1m,5,1,3"]
+|===
+|Layer Type Identifier
+|Annotation Layer Description
+|Syntax
+|Examples (without quotes)
+
+|text
+|Textual representation of resource, also the layer that is used in Basic Search
+|String
+|"Dog", "cat" "walking", "better"
+
+|lemma
+|Lemmatisation
+|String
+|"good", "walk", "dog"
+
+|pos
+|Part-of-Speech annotations
+|<<ref:UD-POS,Universal POS>> tags
+|"NOUN", "VERB", "ADJ"
+
+|orth
+|Orthographic transcription of (mostly) spoken resources
+|String
+|"dug", "cat", "wolking"
+
+|norm
+|Orthographic normalization of (mostly) spoken resources
+|String
+|"dog", "cat", "walking", "best"
+
+|phonetic
+|Phonetic transcription
+|<<ref:SAMPA,SAMPA>>
+|"'du:", "'vi:-d6 'ha:-b@n" 
+|===
+
+[.refs.xx-small]
+--
+* [[ref:UD-POS]]Universal Dependencies, https://universaldependencies.github.io/u/pos/index.html[Universal POS tags v2.0]
+* [[ref:SAMPA]]Dafydd Gibbon, Inge Mertins, Roger Moore (Eds.): Handbook of Multimodal and Spoken Language Systems. Resources, Terminology and Product Evaluation, Kluwer Academic Publishers, Boston MA, 2000, ISBN 0-7923-7904-7
+--
+
+
+== FCS-QL – Layer Type Identifier
+
+* identifiziert Layer für _FCS-QL_ und _Advanced Data View_
+* Weitere Identifier sind _nicht_ erlaubt, außer für Testzwecke
+* Custom Identifier müssen mit “`x-`” beginnen
+
+
+== Ergebnis-Serialisierung
+
+* Ergebnisse müssen im CLARIN FCS Format serialisiert werden
+
+** Resource (Fragment), Data View
+** XML → https://github.com/clarin-eric/fcs-misc/blob/main/fcs-core-2.0/attachments/Resource.xsd[XSD]
+
+* Wichtig: *1 Treffer = 1 Result Record*
+
+** keine Kombination mehrerer Treffer in einem Record
++
+→ für jeden Treffer eigene SRU Records generieren, die die selbe Ressource referenzieren
+
+** mehrere Hit-Marker sind erlaubt, z.B. bei Booleans um einzelne Terme zu highlighten
+** Jeder “Hit” (Treffer) sollte in einem Satzkontext definiert sein
+
+
+ifdef::backend-revealjs[]
+[.left.x-small]
+== Ergebnis-Serialisierung (Cont.)
+endif::[]
+
+*Resource*
+
+* “*searchable* and *addressable* entity” im Endpunkt, z.B. Textkorpus
+* eigenständige (“self contained”), d.h. ganzes Dokument, kein einzelner Satz aus einem Dokument
+* Adressierbar als Ganzes über _Persistent Identifier_ oder _unique URI_
+
+*Resource Fragment*
+
+* Teil einer _Resource_, z.B. einzelner Satz, oder Zeitintervall in Audio-Transkription (bei Multi-Modalen Korpora)
+* sollte adressierbar sein, innerhalb einer _Resource_ (Offset / ID)
+* Nutzung optional, aber empfohlen
+
+*Data View*
+
+* Serialisierung eines “Hits” (Treffers) in _Resource (Fragment)_
+* ermöglicht verschieden Darstellungen, erweiterbar
+
+
+== Ergebnis-Serialisierung – Linking
+
+* Endpunkte sollten Link zur _Resource (Fragment)_ bereitstellen
+
+** persistent identifier (PID) / einzigartige URI
+** falls kein direktes Linking möglich, dann z.B. Webseite mit Beschreibung des Korpus / der Sammlung
+** Link sollte so spezifisch wie möglich sein
+** PIDs vor URIs, beides empfohlen
+
+
+== Ergebnis-Serialisierung – Beispiele
+
+.HITS Data View für eine Ressource mit PID
+[source,xml]
+----
+<fcs:Resource xmlns:fcs="http://clarin.eu/fcs/resource" pid="http://hdl.handle.net/4711/00-15">
+  <fcs:DataView type="application/x-clarin-fcs-hits+xml">
+    <!-- data view payload omitted -->
+  </fcs:DataView>
+</fcs:Resource>
+----
+
+.HITS Data View für eine Resource mit _Resource Fragment_ für genauere Strukturierung
+[source,xml,highlight="2,6"]
+----
+<fcs:Resource xmlns:fcs="http://clarin.eu/fcs/resource" pid="http://hdl.handle.net/4711/08-15">
+  <fcs:ResourceFragment>
+    <fcs:DataView type="application/x-clarin-fcs-hits+xml">
+      <!-- data view payload omitted -->
+    </fcs:DataView>
+  </fcs:ResourceFragment>
+</fcs:Resource>
+----
+
+
+ifdef::backend-revealjs[]
+[.left]
+== Ergebnis-Serialisierung – Beispiele (2)
+endif::[]
+
+.Nutzung von CMDI Data View für Ressourcen-Metadaten neben HITS Ergebnis
+[source,xml,highlight="4..8,10-15"]
+----
+<fcs:Resource xmlns:fcs="http://clarin.eu/fcs/resource"
+              pid="http://hdl.handle.net/4711/08-15"
+              ref="http://repos.example.org/file/text_08_15.html">
+  <fcs:DataView type="application/x-cmdi+xml" <!--1-->
+                pid="http://hdl.handle.net/4711/08-15-1"
+                ref="http://repos.example.org/file/08_15_1.cmdi">
+      <!-- data view payload omitted -->
+  </fcs:DataView>
+
+  <fcs:ResourceFragment pid="http://hdl.handle.net/4711/08-15-2" <!--2-->
+                        ref="http://repos.example.org/file/text_08_15.html#sentence2">
+    <fcs:DataView type="application/x-clarin-fcs-hits+xml">
+      <!-- data view payload omitted -->
+    </fcs:DataView>
+  </fcs:ResourceFragment>
+</fcs:Resource>
+----
+<1> Angabe von CMDI-Metadaten zur Ressource
+<2> Treffer ist Teil einer größeren Ressource “semantisch aussagekräftiger”
+
+
+== Data Views
+
+* Spezifikation (mit XSD-Schema, Beispielen)
+
+** Data Views 1.0 (https://office.clarin.eu/v/CE-2014-0317-CLARIN_FCS_Specification_DataViews_1_0-v20170613.pdf[pdf], https://github.com/clarin-eric/fcs-misc/tree/main/fcs-dataviews-1.0[repo])
+** FCS Core 2.0 (https://office.clarin.eu/v/CE-2017-1046-FCS-Specification-v20230426.pdf[pdf], https://github.com/clarin-eric/fcs-misc/tree/main/fcs-core-2.0[repo]) (primär)
+
+* Spezifiziert in FCS Core 2.0
+
+** Advanced (ADV) Data View
+** Generic Hits (HITS) Data View
+
+* Weitere Data Views wie _Component Metadata (CMDI)_, _Images (IMG)_, _Geolocation (GEO)_ beschreiben, aber nicht im Standard Client “Aggregator” ausgewertet
+
+
+ifdef::backend-revealjs[]
+== Data Views (2)
+endif::[]
+
+* Sende-Pflicht “`send-by-default`”
++
+oder Wunsch “`need-to-request`”
+
+* Generic Hits Data View ist Pflicht, muss immer gesendet werden
+* nur Data Views senden, die
+
+** mit (SRU) FCS Parameter “`x-fcs-dataviews`” angefordert, oder
+** Delivery-Policy “`send-by-default`” besitzen
+
+* ungültige Data Views → non-fatal Diagnostic für jede angefragte Data View
++
+`\http://clarin.eu/fcs/diagnostic/4`
++
+("Requested Data View not valid for this resource")
+
+
+[.columns]
+== Hits Data View
+
+[.column]
+--
+[.x-small%noheader,cols="1h,2"]
+|===
+|Beschreibung
+|Representation eines Hits
+
+|MIME type
+|`application/x-clarin-fcs-hits+xml`
+
+|Payload Disposition
+|_inline_
+
+|Payload Delivery
+|_send-by-default_ (`REQUIRED`)
+
+|Recommended Short Identifier
+|`hits` (`RECOMMENDED`)
+
+|XML Schema
+|https://office.clarin.eu/v/attachments/DataView-Hits.xsd[DataView-Hits.xsd]
+|===
+--
+[.column.small.ms-5]
+--
+* Implementierungspflicht
+* Einfachste Serialisierung, (verlustbehaftete) Approximation von Ergebnissen
+* Jeder Treffer (Hit) sollte nur in einzelnen Satzkontext (o.Ä.) auftreten
+* Mehrere Hit-Annotationen möglich, z.B. bei Konjunktionen im Query
+--
+
+
+== Hits Data View – Beispiele
+
+.HITS Data View mit einem Hit-Marker
+[source,xml,highlight="2,6"]
+----
+<!-- potential @pid and @ref attributes omitted -->
+<fcs:DataView type="application/x-clarin-fcs-hits+xml">
+  <hits:Result xmlns:hits="http://clarin.eu/fcs/dataview/hits">
+    The quick brown <hits:Hit>fox</hits:Hit> jumps over the lazy dog.
+  </hits:Result>
+</fcs:DataView>
+----
+
+.HITS Data View mit mehreren Hit-Markern für Boolean-Queries
+[source,xml,highlight="3"]
+----
+<!-- potential @pid and @ref attributes omitted -->
+<fcs:DataView type="application/x-clarin-fcs-hits+xml">
+  <hits:Result xmlns:hits="http://clarin.eu/fcs/dataview/hits">
+    The quick brown <hits:Hit>fox</hits:Hit> jumps over the lazy <hits:Hit>dog</hits:Hit>.
+  </hits:Result>
+</fcs:DataView>
+----
+
+
+[.columns]
+== Kwic Data View
+
+[.column]
+--
+[.x-small%noheader,cols="1h,2"]
+|===
+|Beschreibung
+|Representation eines Hits
+
+|MIME type
+|`application/x-clarin-fcs-kwic+xml`
+
+|Payload Disposition
+|_inline_
+
+|Payload Delivery
+|_send-by-default_ (`REQUIRED`)
+
+|Recommended Short Identifier
+|`kwic` (`RECOMMENDED`)
+
+|XML Schema
+|-
+|===
+--
+[.column.small.ms-5]
+--
+* *Deprecated!*
+* Zur Kompatibilität mit _Legacy FCS Clienten_ evtl.
+* Beispiel in https://github.com/clarin-eric/fcs-sru-cqi-bridge/blob/9bcbe0f3297bde3f578b7eb6403d248571ac6bc2/src/main/java/eu/clarin/sru/cqibridge/CqiSRUSearchResultSet.java#L136-L144[CQP/SRU bridge]
+* Abbildung von
+
+** linken und rechten Kontext
+** Treffer
+
+// TODO: pin java version for code?
+* Serialisierer https://github.com/clarin-eric/fcs-simple-endpoint/blob/main/src/main/java/eu/clarin/sru/server/fcs/XMLStreamWriterHelper.java#L235[Java], https://github.com/Querela/fcs-simple-endpoint-python/blob/1.0.4/src/clarin/sru/fcs/xml/writer.py#L146[Python]
+* Aggregator: Transformation zu Hits Data View!
+--
+
+
+[.columns]
+== Advanced Data View
+
+[.column]
+--
+[.x-small%noheader,cols="1h,2"]
+|===
+|Beschreibung
+|Representation eines Hits für die Advanced Search
+
+|MIME type
+|`application/x-clarin-fcs-adv+xml`
+
+|Payload Disposition
+|_inline_
+
+|Payload Delivery
+|_send-by-default_ (`REQUIRED`)
+
+|Recommended Short Identifier
+|`adv` (`RECOMMENDED`)
+
+|XML Schema
+|https://office.clarin.eu/v/attachments/DataView-Advanced.xsd[DataView-Advanced.xsd]
+|===
+--
+[.column.small.ms-5]
+--
+* Serialisierung für die _Advanced Search_ für multimediale Daten (Text, transkribiertes Audio)
+* Darstellung strukturierter Informationen über mehrere Annotationslayer
+* Annotationen sind Datenströme (Ranges) über dem Signal (Anfang + Ende)
+* Segmentierung über `<Segment>`, Annotationen in `<Span>` in `<Layer>`
+** Segmente müssen über alle Layer übereinstimmen
+--
+
+
+== Advanced Data View – Beispiel
+
+image::adv-db-stream-example.png[Advanced Data View - Stream Data]
+
+
+== Advanced Data View – Beispiel (2)
+
+image::adv-dv-example-relation.png[Advanced Data View - Relation]
+
+
+== Advanced Data View – Darstellung
+
+image::adv-dv-visualization.png[Advanced Data View - Visualization in Aggregator]
+
+[.refs.xx-small]
+--
+https://contentsearch.clarin.eu/?&queryType=fcs&query=%5B%20word%20%3D%20%22her.*%22%20%5D%20%5B%20lemma%20%3D%20%22Artznei%22%20%5D%20%5B%20pos%20%3D%20%22VERB%22%20%5D
+--
+
+
+[.left.small]
+== Beispiele
+
+→ siehe TODO link zu folie (`searchRetrieve` Query) +
+Endpunkt: https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru
+
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?operation=searchRetrieve&queryType=fcs&query=%5bword%3d%22anv%C3%A4ndning%22%5d[pass:q[…?operation=searchRetrieve&*queryType=fcs*&query=*%5bword%3d%22anv%C3%A4ndning%22%5d*]]
++
+→ FCS 2.0, FCS-QL: [.green]`[ word = "användning" ]`, HITS + ADV
+
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?operation=searchRetrieve&queryType=cql&query=%22anv%C3%A4ndning%22[pass:q[…?operation=searchRetrieve&*queryType=cql*&query=*%22anv%C3%A4ndning%22*]]
++
+→ FCS 2.0, CQL: [.green]`"användning"`, HITS
+
+* https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?operation=searchRetrieve&version=1.2&query=cat[pass:q[…?operation=searchRetrieve&version=1.2&query=cat]] ↔ https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat[pass:q[…?query=cat]] → HITS
+
+** FCS 1.0, [.lightgrey]`sru="http://www.loc.gov/zing/srw/"`
+** FCS 2.0, [.lightgrey]`sruResponse="http://docs.oasis-open.org/ns/search-ws/sruResponse"`
+
+* weitere Parameter: `x-indent-response=1` / `x-fcs-dataviews=cmdi` / `x-fcs-context=11022/0000-0000-20DF-1`
+
