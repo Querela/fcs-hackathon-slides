@@ -1,6 +1,14 @@
 [background-image="textplus-fcs.002.png",background-opacity="0.5"]
 = Wegweiser Endpunktentwicklung
 
+[.notes]
+--
+* Wichtige Vorabfragen
+* Existierende Implementierungen, Ressourcen zur Neuentwicklung
+* Voraussetzungen
+--
+
+
 [.left]
 == Entwicklungsentscheidungen
 
@@ -15,6 +23,7 @@
 ❓ Welche Suchmaschine nutze ich / kann ich nutzen?
 [.ms-5.mb-5]
 ❗ KorAP, Korp/CWB, Lucene/Solr/ElasticSearch, (No)SketchEngine, …
+
 
 ifdef::backend-revealjs[]
 [.left]
@@ -35,6 +44,7 @@ endif::[]
 [.ms-5]
 ❗ SRU + FCS Spezifikationen …
 
+
 == Endpunkt-Implementierungen
 
 * https://github.com/clarin-eric/fcs-korp-endpoint[Korp FCS 2.0] - Referenzimplementierung, https://www.kielipankki.fi/support/korp-advanced/[Korp corpus search]
@@ -51,6 +61,7 @@ endif::[]
 Quelle: https://www.clarin.eu/content/federated-content-search-clarin-fcs-technical-details[clarin], https://github.com/clarin-eric/awesome-fcs[awesome-fcs]
 --
 
+
 == Endpunktneuentwicklung
 
 * Anpassung von Referenzimplementierung (Korp)
@@ -65,6 +76,7 @@ Quelle: https://www.clarin.eu/content/federated-content-search-clarin-fcs-techni
 *** Python SRU: https://fcs-sru-server-python.readthedocs.io/en/latest/[fcs-sru-server-python.readthedocs.io]
 *** Python FCS: https://fcs-simple-endpoint-python.readthedocs.io/en/latest/[fcs-simple-endpoint-python.readthedocs.io]
 
+
 ifdef::backend-revealjs[]
 == Endpunktneuentwicklung (2)
 endif::[]
@@ -74,6 +86,7 @@ endif::[]
 ** FCS: https://github.com/clarin-eric/fcs-misc[github.com/clarin-eric/fcs-misc] → “FCS Core 2.0”
 
 * Awesome List: https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs] 
+
 
 [.left]
 == Voraussetzung an lokale Suchmaschine

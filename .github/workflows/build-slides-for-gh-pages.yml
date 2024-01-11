@@ -27,6 +27,13 @@ jobs:
           mv reveal.js/dist slides/reveal.js/
           mv reveal.js/plugin slides/reveal.js/
 
+      - name: Setup highlight.js for reveal.js
+        run: |
+          git clone -b 10.7.3 --depth 1 https://github.com/highlightjs/highlight.js.git
+          cp highlight.js/src/styles/github.css slides/reveal.js/plugin/highlight/
+          cp highlight.js/src/styles/idea.css slides/reveal.js/plugin/highlight/
+          cp highlight.js/src/styles/magula.css slides/reveal.js/plugin/highlight/
+
       - name: Build slides
         run: asciidoctor-revealjs -v -D slides index.adoc
 

@@ -24,3 +24,51 @@
 * Optional
 * Query: FCS-QL (Strukturierte Suche über Annotationslayer)
 * DataView: HITS und Advanced
+
+
+ifdef::backend-revealjs[]
+== Endpoint Description – Capabilities (2)
+endif::[]
+
+* Weitere Capabilities denkbar
++
+→ aber auf Basic und Advanced beschränkt!
+
+* Bestimmen nicht nur Suchmodi!
+* In Arbeit:
+
+** Authentifizierung/Authorisierung
+** Lexikalische Suche: `…/lex-search` → LexCQL, LexHITS
+** Syntaktische Suche?
+
+* Hinweis: laut XSD besitzen Capability-URIs folgendes Schema
+`\http://clarin.eu/fcs/capability/\w([\.\-]{0,1}\w)*`
+
+
+[.left]
+== BASIC Search
+
+[.position-absolute.right--30.width-50.opacity-50,sql]
+----
+cat
+"cat"
+cat AND dog
+"grumpy cat"
+"grumpy cat" AND dog
+"grumpy cat" OR "lazy dog"
+cat AND (mouse OR "lazy dog")
+----
+
+* Verpflichtend!
+* Einfache *Volltextsuche*
+* *Contextual Query Language (CQL)* als Anfragesprache
+
+** Endpunkte müssen “term-only” Queries unterstützen
+** können Boolean-Operatoren (`AND`/`OR`) und Sub-Queries unterstützen
+** bei Fehlern mit entsprechender Diagnostic abbrechen
+** Endpunkte entscheiden selber, worauf gesucht wird
+** (Text, Normalisierung o.Ä.)
+
+* Ergebnisse serialisiert im *Generic Hits (HITS) Data View*
+
+*``\http://clarin.eu/fcs/capability/basic-search``*

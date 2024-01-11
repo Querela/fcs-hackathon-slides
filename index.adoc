@@ -8,6 +8,11 @@
 :revealjs_slideNumber: h.v
 // :revealjs_hash: true
 :source-highlighter: highlight.js
+ifdef::backend-revealjs[]
+// :highlightjsdir:
+// https://github.com/asciidoctor/asciidoctor-reveal.js/blob/cbe2ac7f72877050ce15ee4a38fd54ca91590a78/lib/asciidoctor-revealjs/highlightjs.rb#L62
+:highlightjs-theme: reveal.js/plugin/highlight/magula.css
+endif::[]
 :imagesdir: images
 :customcss: css/presentation.css
 :title-slide-background-image: textplus-fcs.002.png

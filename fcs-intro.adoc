@@ -5,6 +5,12 @@
 // :background-video-muted: true
 // :background-opacity: 0.7
 
+[.notes]
+--
+* Begriffserklärung, Geschichte
+--
+
+
 == Was ist die FCS?
 
 * “Federated Content Search” von https://www.clarin.eu/content/content-search[CLARIN]
@@ -17,6 +23,7 @@ auch: Föderierte “Corpus Query Platform”
 * Text-Ressourcen umfassen annotierte Korpora, Volltexte usw.
 * FCS = Interface-Spezifikation, Such-Infrastruktur und Software-Ökosystem
 * Nutzung von etablierten Standards und Erweiterbarkeit!
+
 
 == Was umfasst die FCS?
 
@@ -34,6 +41,7 @@ auch: Föderierte “Corpus Query Platform”
 * dezentrale Endpunkte an den Datenzentren (lokale Suchmaschinen auf Ressourcen)
 --
 
+
 == Was umfasst die FCS? (2)
 
 *Software-Ökosystem primär in Java*
@@ -41,12 +49,14 @@ auch: Föderierte “Corpus Query Platform”
 * Bibliotheken (Java, Python, …)
 * Tools (Validator, Aggregator, Registry)
 
+
 == Voraussetzungen zur Teilnahme an der FCS
 
 * (eigene) Text-Ressourcen
 * Such-“Maschine” auf Text-Ressourcen
 ** Minimum: Volltextsuche
 * Deployment von FCS-Endpunkt mit öffentlichem Zugriff
+
 
 [.columns]
 == Vor- und Nachteile für die FCS
@@ -69,6 +79,7 @@ auch: Föderierte “Corpus Query Platform”
 * kein globales Ranking von Ergebnissen möglich
 --
 
+
 [.columns]
 == Vor- und Nachteile für die FCS Endpunkte
 
@@ -87,6 +98,7 @@ auch: Föderierte “Corpus Query Platform”
 * Deployment von (extra) Endpoint notwendig
 --
 
+
 == Vergleich FCS mit zentralem Index
 
 [%noheader,cols="h,3,3"]
@@ -102,6 +114,7 @@ auch: Föderierte “Corpus Query Platform”
 ifdef::backend-revealjs[]
 |===
 
+
 == Vergleich FCS mit zentralem Index (2)
 
 [%noheader,cols="h,3,3"]
@@ -116,6 +129,7 @@ endif::[]
 |➖ schwierig (z.B. über externe Metadaten; nicht direkt vorgesehen)
 |➕ Indizierung erlaubt Clustering/Klassifikation nach Themen und Kategorien
 |===
+
 
 == Geschichte
 
@@ -140,6 +154,7 @@ endif::[]
 * EDC: European Demonstrator Case
 --
 
+
 [%notitle]
 == Geschichte (2)
 
@@ -149,8 +164,10 @@ endif::[]
 * *2022* FCS Schwerpunkt in Text+ (_Findability_)
 * *2023* neuer FCS-Maintainer in CLARIN
 
+
 [%notitle,background-image="LexFCS_Diagram_v3.png",background-size="contain"]
 == FCS Architektur
+
 
 == Kommunikationsprotokoll
 
@@ -163,6 +180,7 @@ SRU (Search/Retrieval via URL) / OASIS searchRetrieve
 ** *SearchRetrieve*: Suchanfrage
 * Daten als XML
 * Erlaubt Erweiterungen des Protokolls
+
 
 == Grundannahme zur Datenstruktur
 
@@ -210,18 +228,22 @@ s|schnell
 |===
 --
 
+
 == Explain: Ressourcen-Discovery
 
 image::epdesc-1.png[Endpoint Description]
+
 
 == Explain: Ressourcen-Discovery (2)
 
 image::epdesc-2.png[Endpoint Description, erweiterbar]
 
+
 //[background-image="epdesc-3.png",background-size="contain"]
 == Explain: Ressourcenstruktur
 
 image::epdesc-3.png[Endpoint Description, Ressourcenstruktur]
+
 
 == Anfragesprache FCS-QL
 
@@ -230,18 +252,22 @@ image::epdesc-3.png[Endpoint Description, Ressourcenstruktur]
 
 image::fcsql-query-builder.png[Visual Query Builder for FCS-QL]
 
+
 //[background-image="fcs-results-hits.png",background-size="contain"]
 == Ergebnisvisualisierung
 
 image::fcs-results-hits.png[HITS Results]
 
+
 == Ergebnisvisualisierung (2)
 
 image::fcs-results-kwic.png[KWIC Results]
 
+
 == Ergebnisvisualisierung (3)
 
 image::fcs-results-adv.png[ADV Results]
+
 
 == Aktueller Stand der FCS
 
@@ -250,6 +276,7 @@ image::fcs-results-adv.png[ADV Results]
 * 😎 “Awesome FCS” List: https://github.com/clarin-eric/awesome-fcs[github.com/clarin-eric/awesome-fcs] 
 mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 ** Text+ Ergänzungen (z.B. zu LexFCS/LexCQL/Forks/Software): https://gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md?ref_type=heads[gitlab.gwdg.de/textplus/ag-fcs-documents/-/blob/main/awesome-fcs.md]
+
 
 [%notitle]
 == Aktueller Stand der FCS (2)
@@ -261,22 +288,31 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 ** Online-Validator für Endpunkte (http://clarin.ids-mannheim.de/srutest[srutest], Code: https://github.com/clarin-eric/fcs-endpoint-tester[Github])
 * Endpunkte-Registratur: https://centres.clarin.eu/fcs[centres.clarin.eu/fcs]
 
+
 == Aktuelle Arbeiten
 
 * *Lexical Resources* Erweiterung
+
 ** erste Spezifikation und Implementierung in Text+
 ** Offizielle Erweiterung von CLARIN → ~2024 Working Plan
+
+[.mt-3]
 * *AAI*-Einbindung
+
 ** Spezifikation und Implementierung
 ** Ziel: Unterstützung _zugangsbeschränkte Ressourcen_
 ** Absicherung des Aggregators über Shibboleth → Weitergabe von AAI-Attributen an Endpunkte
 ** Vorarbeit aus CLARIAH-DE, Teil des Text+ Arbeitsplans (IDS Mannheim, Uni/SAW Leipzig, Vorarbeiten BBAW)
 
+
 [%notitle]
 == Aktuelle Arbeiten (2)
 
 * *Syntactic Search* (?)
+
+[.mt-3]
 * Größerer Bedarf an föderierten Suchverfahren für Textressourcen in *Text+* (Editionen, Collections)
+
 
 == Aktueller Stand bzgl. **Lexical Resources**
 
@@ -286,6 +322,7 @@ mit relevanten Links zu Specs, Tools, Bibliotheken, Implementierungen uvm.
 * Interessensbekundungen aus verschiedenen Ländern
 * Erste Vorarbeiten: „RABA“ (Estland): u.a. „Eesti Wordnet“
 
+
 ifdef::backend-revealjs[]
 == Aktueller Stand bzgl. **Lexical Resources**
 endif::[]
@@ -294,6 +331,7 @@ endif::[]
 ** Spezifikation auf Zenodo: https://zenodo.org/records/7849754[zenodo.org/records/7849754]
 ** Präsentation auf eLex 2023: https://elex.link/elex2023/wp-content/uploads/69.pdf[“A Federated Search and Retrieval Platform for Lexical Resources in Text+ and CLARIN”]
 ** Aggregator: https://fcs.text-plus.org/?&queryType=lex[fcs.text-plus.org/?queryType=lex]
+
 
 == Aktueller Stand von Teilnehmenden
 
@@ -315,6 +353,7 @@ in 6 Sprachen
 +
 von 9 Institutionen in Deutschland
 
+
 == Integration in FCS Infrastruktur
 
 [.left]
@@ -331,6 +370,7 @@ von 9 Institutionen in Deutschland
 ** CLARIN Account + https://www.clarin.eu/webform/registration-form-centre-registry[Formular] als Centre
 ** damit auch Monitoring etc.
 
+
 == Weitere Nutzung der FCS
 
 * Entwicklung eines alternativen Aggregator-Frontends als _Web Component_
@@ -338,6 +378,7 @@ von 9 Institutionen in Deutschland
 ** Nutzung der Aggregator-API
 ** Einschränkung auf Teilmenge der Ressourcen, z.B. für Integration auf eigener Website
 ** Facettierung, alternative Visualisierung
+
 
 == Bootstrapping Endpunkt Entwicklung
 

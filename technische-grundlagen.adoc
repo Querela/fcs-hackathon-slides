@@ -316,7 +316,8 @@ image::sru-protocol-model.gif[SRU Protocol,float=right]
 * alle Elemente sind optional, by default non-repeatable
 * [.blue]+pass:q[*numberOfRecords*, resultSetId, *records*, *nextRecordPosition*, echoedSearchRetrieveRequest, *diagnostics*, extraResponseDataⓇ]+
 * neu in 2.0: [.blue]+pass:q[resultSetTTL, resultCountPrecisionⓇ, facetedResultsⓇ, searchResultAnalysisⓇ]+
-* (Ⓡ = repeatable)
++
+(Ⓡ = repeatable)
 
 [.mt-5]
 * Spec: “link:http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162438[Actual Response Elements for this Binding]”
@@ -414,7 +415,7 @@ endif::[]
 
 == searchRetrieve 2.0 – Pagination (Cont.)
 
-[.img-bg-pa-r-30-w75.op-50]
+[.position-absolute.right--30.width-75.opacity-50]
 image::fcs-sru-results-xml.png[Response XML für CQL Suche nach "cat"]
 
 * https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat[pass:q[spraakbanken.gu.se/…/sru?*query=cat*]]
@@ -742,7 +743,7 @@ endif::[]
 
 == FCS Interface Specification
 
-[.img-bg-pa-r0-w50]
+[.position-absolute.right-0.width-50]
 image::FCS_architecture_de.png[FCS Architektur]
 
 [.pt-5]

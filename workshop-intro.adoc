@@ -1,6 +1,13 @@
 [background-image="textplus-fcs.002.png",background-opacity="0.5"]
 = Begrüßung und Überblick
 
+[.notes]
+--
+* Organisatorisches, Agenda
+* Vorstellung, Text+ und CLARIN
+--
+
+
 == Agenda Donnerstag (16.11.2023)
 
 [%autowidth,cols=">,<",frame=none,grid=none]
@@ -24,6 +31,12 @@
 |Get-together
 |===
 
+[.notes]
+--
+* https://events.gwdg.de/event/545/timetable/#20231116
+--
+
+
 == Agenda Freitag (17.11.2023)
 
 [%autowidth,cols=">,<",frame=none,grid=none]
@@ -44,6 +57,12 @@
 |Ende
 |===
 
+[.notes]
+--
+* https://events.gwdg.de/event/545/timetable/#20231117
+--
+
+
 == Ziel des Workshop
 
 * Verständnis von der FCS und der technischen Infrastruktur
@@ -53,6 +72,7 @@
 ** Debug und Deployment
 ** Test mit Validator & Integration in Aggregator
 * Präsentation im gemeinsamen Aggregator?
+
 
 == Über mich
 
@@ -69,6 +89,7 @@
 * seit Mitte 2022 Arbeit mit und an FCS im Rahmen von Text+
 * seit 2023 offiziell Maintainer für FCS in CLARIN-ERIC
 
+
 [.columns]
 == Text+
 
@@ -81,11 +102,14 @@
 ** Stiftungen
 * Start 10/2021
 
-image::textplus-overview.png[Text+ Überblick,float=right]
+[.position-absolute.width-75.right-0.bottom-0]
+image::textplus-overview.png[Text+ Überblick]
+
 
 == Text+ – Struktureller Aufbau
 
 image::textplus-structure.png[Text+ Überblick]
+
 
 [.columns]
 == CLARIN-ERIC

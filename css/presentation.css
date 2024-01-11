@@ -205,24 +205,6 @@ div.refs li:hover p a {
   color: blue;
 }
 
-/* --- Background Images ------------------------------------------------ */
-
-.img-bg-pa-r0-w50 {
-  position: absolute;
-  right: 0;
-  width: 50%;
-}
-
-.img-bg-pa-r-30-w75 {
-  position: absolute;
-  right: -30%;
-  width: 75%;
-}
-
-.op-50 {
-  opacity: 50%;
-}
-
 /* --- Colors ----------------------------------------------------------- */
 
 .lightgrey {
@@ -242,6 +224,30 @@ div.refs li:hover p a {
 
 .font-italic {
   font-style: italic;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.right--30 {
+  right: -30%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.opacity-50 {
+  opacity: 50%;
 }
 
 .m-0 {

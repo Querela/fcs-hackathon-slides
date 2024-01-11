@@ -131,21 +131,23 @@ endif::[]
 
 [GET] Anfrage (eingehend)
 
-[.ms-5.left]
+[.ms-5.left.block-border-left-dashed]
 --
 ↳ `SRUServerServlet` / `SRUServerApp` (WebServer)
 
-[.ms-5.left,open]
+[.ms-5.left.block-border-left-dashed,open]
 ====
 ↳ `SRUServer`
 
+[.ms-3]
 * URL-Parameterauswertung
 * Multiplexing nach search/scan/explain
 
-[.ms-5.left,open]
+[.ms-5.left.block-border-left-dashed,open]
 =====
 ↳ `SimpleEndpointSearchEngineBase` (Nutzer-Implementierung)
 
+[.ms-3]
 ** Suchanfrage parsen (CQL/FCS-QL) and Suchmaschine senden
 ** Ergebnis in `SRUSearchResultSet` verpacken
 ** mögliche Diagnostics etc.
@@ -153,6 +155,7 @@ endif::[]
 ↲
 =====
 
+[.ms-3]
 * mögliche Fehlerbehandlung
 * Generierung XML Output (SRU Parameter)
 ====
@@ -164,7 +167,7 @@ endif::[]
 
 `SRUServerServlet` - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/utils/SRUServerServlet.java[java] (Servlet) / `SRUServerApp` - https://github.com/Querela/fcs-sru-server-python/blob/1.1.3/src/clarin/sru/server/wsgi.py#L36[python] (WSGI)
 
-[.ms-5.darkgrey.font-italic]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed]
 --
 Servlet Implementierung für Servlet Container, `doGet`-Handler, Setup von `SRUServer` +
 Wrapper/Anwendung, die vom Betreiber ausgeführt wird
@@ -172,22 +175,22 @@ Wrapper/Anwendung, die vom Betreiber ausgeführt wird
 
 SRUServer - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/SRUServer.java[java], https://github.com/Querela/fcs-sru-server-python/blob/1.1.3/src/clarin/sru/server/server.py#L293[python]
 
-[.ms-5.darkgrey.font-italic]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed]
 --
 SRU Protokoll Implementierung, `handleRequest`, Fehlerbehandlung, XML Output Generierung
 --
 
 SRURequestImpl - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/SRURequestImpl.java[java], https://github.com/Querela/fcs-sru-server-python/blob/1.1.3/src/clarin/sru/server/request.py#L567[python]
 
-[.ms-5.darkgrey.font-italic]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed]
 --
 Konkrete SRU GET Parameterauswertung (Parsen, Validierung; SRU Versionen) + mögliche FCS-Parameter (“`x-`...”), SRU-Versionsbestimmung
 --
-[.ms-5]
+[.ms-5.block-border-left-dashed]
 --
 ↳ SRURequest (Interface) - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/SRURequest.java[java], https://github.com/Querela/fcs-sru-server-python/blob/1.1.3/src/clarin/sru/server/request.py#L47[python]
 
-[.ms-5.darkgrey.font-italic,open]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed,open]
 ====
 Dokumentation aller SRU Parameter
 ====
@@ -201,27 +204,27 @@ endif::[]
 
 *`XYZEndpointSearchEngine`* - korp: https://github.com/clarin-eric/fcs-korp-endpoint/blob/master/src/main/java/se/gu/spraakbanken/fcs/endpoint/korp/KorpEndpointSearchEngine.java[java], https://github.com/Querela/fcs-korp-endpoint-python/blob/5ee448d2369e450571a6d82d3e379154752a3397/src/korp_endpoint/endpoint.py#L182[python]
 
-[.ms-5.darkgrey.font-italic]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed]
 --
 Konkrete Implementierung von `createEndpointDescription`, `do`*-Methoden
 --
-[.ms-5]
+[.ms-5.block-border-left-dashed]
 --
 ↳ `SimpleEndpointSearchEngineBase` (abstrakt) - https://github.com/clarin-eric/fcs-simple-endpoint/blob/main/src/main/java/eu/clarin/sru/server/fcs/SimpleEndpointSearchEngineBase.java[java], https://github.com/Querela/fcs-simple-endpoint-python/blob/1.0.4/src/clarin/sru/fcs/server/search.py#L507[python]
 
-[.ms-5.darkgrey.font-italic,open]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed,open]
 ====
 Lifecyle (`init` → `destroy`), Integration von Endpoint Description, Interfaces für Nutzer
 ====
-[.ms-5,open]
+[.ms-5.block-border-left-dashed,open]
 ====
 ↳ `SRUSearchEngineBase` (abstrakt) - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/utils/SRUSearchEngineBase.java[java]
 
-[.ms-5,open]
+[.ms-5.block-border-left-dashed,open]
 =====
 ↳ `SRUSearchEngine` (Interface) - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/SRUSearchEngine.java[java], https://github.com/Querela/fcs-sru-server-python/blob/1.1.3/src/clarin/sru/server/server.py#L160[python]
 
-[.ms-5.darkgrey.font-italic,open]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed,open]
 ======
 Interface: `search`, `explain`, `scan`
 ======
@@ -237,23 +240,23 @@ endif::[]
 
 *`XYZSRUSearchResultSet`* - korp: https://github.com/clarin-eric/fcs-korp-endpoint/blob/master/src/main/java/se/gu/spraakbanken/fcs/endpoint/korp/KorpSRUSearchResultSet.java[java], https://github.com/Querela/fcs-korp-endpoint-python/blob/5ee448d2369e450571a6d82d3e379154752a3397/src/korp_endpoint/endpoint.py#L57[python]
 
-[.ms-5.darkgrey.font-italic]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed]
 --
 Konkrete Implementierung, `nextRecord` + `writeRecord` Iterator und Serialisierung von Ergebnissen
 --
-[.ms-5]
+[.ms-5.block-border-left-dashed]
 --
 ↳ `SRUSearchResultSet` (abstrakt) - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/SRUSearchResultSet.java[java], https://github.com/Querela/fcs-sru-server-python/blob/1.1.3/src/clarin/sru/server/result.py#L208[python]
 
-[.ms-5.darkgrey.font-italic,open]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed,open]
 ====
 Felder für `searchRetrieve` Operation Ergebnisse (total, records, …)
 ====
-[.ms-5,open]
+[.ms-5.block-border-left-dashed,open]
 ====
 ↳ `SRUAbstractResult` (Interface) - https://github.com/clarin-eric/fcs-sru-server/blob/main/src/main/java/eu/clarin/sru/server/SRUAbstractResult.java[java], https://github.com/Querela/fcs-sru-server-python/blob/1.1.3/src/clarin/sru/server/result.py#L15[python]
 
-[.ms-5.darkgrey.font-italic,open]
+[.ms-5.darkgrey.font-italic.block-border-left-dashed,open]
 =====
 Diagnostics + `ExtraResponseData`
 =====
@@ -283,9 +286,7 @@ endif::[]
 [.left.small]
 == Endpunkt Konfigurationen
 
-// TODO: Hintergrundbild/Beispielcode
-
-[.img-bg-pa-r-30-w75.op-50,xml]
+[.position-absolute.right--30.width-75.opacity-50,xml]
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoint-config xmlns="http://www.clarin.eu/sru-server/1.0/">
