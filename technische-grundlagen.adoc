@@ -590,7 +590,7 @@ insbesondere `recordPacking`
 == SRU 2.0 – Diagnostics
 
 * “Fehlerbehandlung”
-* Unterscheidung in (non-)fatal, (non-)surrogate → TODO add ref
+* Unterscheidung in (non-)fatal, (non-)surrogate → <<SRU 2.0 – Diagnostic Model,SRU 2.0 – Diagnostic Model>>
 * Schema: `info:srw/schema/1/diagnostics-v1.1`
 +
 Prefix: `info:srw/diagnostic/1/`
@@ -993,7 +993,7 @@ endif::[]
 ** *Advanced Search* mit FCS-QL
 
 * Suchergebnisse werden im _Resource (Fragment)_ und _Data View_ Formaten serialisiert
-* Details bei Implementierung → TODO Folien link
+* Details bei Implementierung → <<Resources und Data Views,Kapitel _Resources und Data Views_>>
 
 
 == FCS – SRU Extension Parameter
@@ -1024,7 +1024,7 @@ endif::[]
 
 == FCS – Diagnostics
 
-* Ergänzungen zu den SRU Diagnostics → TODO Link zu Folie
+* Ergänzungen zu den SRU Diagnostics → <<SRU 2.0 – Diagnostics,SRU 2.0 – Diagnostics>>
 * Präfix: `\http://clarin.eu/fcs/diagnostic/`
 * Bezug auf die Extra-Request-Parameter
 

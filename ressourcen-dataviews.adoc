@@ -488,7 +488,7 @@ https://contentsearch.clarin.eu/?&queryType=fcs&query=%5B%20word%20%3D%20%22her.
 [.left.small]
 == Beispiele
 
-→ siehe TODO link zu folie (`searchRetrieve` Query) +
+→ siehe <<searchRetrieve 2.0 – Query (Examples),weitere Beispiele>> (`searchRetrieve` Query) +
 Endpunkt: https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru
 
 * https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?operation=searchRetrieve&queryType=fcs&query=%5bword%3d%22anv%C3%A4ndning%22%5d[pass:q[…?operation=searchRetrieve&*queryType=fcs*&query=*%5bword%3d%22anv%C3%A4ndning%22%5d*]]
@@ -501,8 +501,8 @@ Endpunkt: https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru
 
 * https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?operation=searchRetrieve&version=1.2&query=cat[pass:q[…?operation=searchRetrieve&version=1.2&query=cat]] ↔ https://spraakbanken.gu.se/ws/fcs/2.0/endpoint/korp/sru?query=cat[pass:q[…?query=cat]] → HITS
 
-** FCS 1.0, [.lightgrey]`sru="http://www.loc.gov/zing/srw/"`
-** FCS 2.0, [.lightgrey]`sruResponse="http://docs.oasis-open.org/ns/search-ws/sruResponse"`
+** FCS 1.0, [.grey]`sru="http://www.loc.gov/zing/srw/"`
+** FCS 2.0, [.grey]`sruResponse="http://docs.oasis-open.org/ns/search-ws/sruResponse"`
 
 * weitere Parameter: `x-indent-response=1` / `x-fcs-dataviews=cmdi` / `x-fcs-context=11022/0000-0000-20DF-1`
 
