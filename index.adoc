@@ -21,8 +21,6 @@ endif::[]
 :toclevels: 1
 :icons: font
 
-// images/textplus-fcs.002.png
-
 [%notitle,%discrete]
 ifdef::backend-revealjs[== Table of Contents]
 
@@ -70,10 +68,10 @@ include::fcs-ressourcen.adoc[leveloffset=+1]
 
 
 // nur zur schnelleren Entwickeln, sollte später entfernt werden
-[pass]
-++++
-<script src="./live.js"></script>
-++++
+// [pass]
+// ++++
+// <script src="./live.js"></script>
+// ++++
 
 [pass]
 ++++
