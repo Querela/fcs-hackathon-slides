@@ -16,6 +16,7 @@
 
 /* for slides with background image, make colored box for title */
 .reveal section.stack.present section:first-of-type[data-background-image] h2,
+.reveal .slides > section.present > h2,
 .reveal section.stack.present section:first-of-type[data-background-image] aside.notes {
   background: #fff8f1d0;
   padding: 3rem;
@@ -496,6 +497,9 @@ div.refs li:hover p a {
 
 .ms-5 {
   margin-left: 3rem !important;
+}
+.ms-6 {
+  margin-left: 5rem !important;
 }
 
 .ms-auto {

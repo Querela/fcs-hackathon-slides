@@ -62,7 +62,7 @@ include::endpunkt-entwicklung.adoc[leveloffset=+1]
 
 <<<
 
-== Deployment
+include::deployment.adoc[leveloffset=+1]
 
 <<<
 
